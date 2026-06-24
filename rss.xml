@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>etherGTM Blog</title>
+  <link>https://ethergtm.co/blog/</link>
+  <description>Outbound, GTM, AI automation, and RevOps playbooks from the etherGTM team.</description>
+  <language>en-us</language>
+  <lastBuildDate>Wed, 24 Jun 2026 10:48:54 GMT</lastBuildDate>
+  <item>
+    <title>Using AI to Qualify Leads Before They Ever Hit Your CRM</title>
+    <link>https://ethergtm.co/blog/ai-lead-qualification-before-crm/</link>
+    <guid isPermaLink="true">https://ethergtm.co/blog/ai-lead-qualification-before-crm/</guid>
+    <description>Every unqualified lead that reaches a rep&apos;s calendar costs more than the meeting it wastes. Here&apos;s how we use AI to filter before, not after, the meeting gets booked.</description>
+    <author>Swapnesh Patra</author>
+    <category>AI Automation</category>
+    <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>LinkedIn Outreach Sequences That Convert in 2026</title>
+    <link>https://ethergtm.co/blog/linkedin-sequences-that-convert/</link>
+    <guid isPermaLink="true">https://ethergtm.co/blog/linkedin-sequences-that-convert/</guid>
+    <description>Connection request, pitch, follow-up — the sequence everyone runs, and the reason it converts worse every year. Here&apos;s what we run instead.</description>
+    <author>Swapnesh Patra</author>
+    <category>Outbound</category>
+    <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>RevOps Metrics That Actually Predict Pipeline Health</title>
+    <link>https://ethergtm.co/blog/revops-metrics-that-predict-pipeline/</link>
+    <guid isPermaLink="true">https://ethergtm.co/blog/revops-metrics-that-predict-pipeline/</guid>
+    <description>Meetings booked is a vanity metric if nothing downstream is tracked. Here are the RevOps metrics that tell you whether outbound is actually working.</description>
+    <author>Swapnesh Patra</author>
+    <category>RevOps</category>
+    <pubDate>Thu, 02 Apr 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Building a GTM Motion That Doesn&apos;t Rely on Inbound</title>
+    <link>https://ethergtm.co/blog/gtm-motion-without-inbound/</link>
+    <guid isPermaLink="true">https://ethergtm.co/blog/gtm-motion-without-inbound/</guid>
+    <description>Inbound is a great channel until your category gets crowded or your CAC creeps up. Here&apos;s how to build a GTM motion that doesn&apos;t wait for someone to find you.</description>
+    <author>Swapnesh Patra</author>
+    <category>GTM</category>
+    <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>How AI Agents Are Changing B2B Outbound Prospecting</title>
+    <link>https://ethergtm.co/blog/ai-agents-b2b-outbound/</link>
+    <guid isPermaLink="true">https://ethergtm.co/blog/ai-agents-b2b-outbound/</guid>
+    <description>AI didn&apos;t replace outbound reps — it replaced the twelve hours a week they used to spend on research. Here&apos;s where the leverage actually shows up.</description>
+    <author>Swapnesh Patra</author>
+    <category>AI Automation</category>
+    <pubDate>Wed, 18 Feb 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>The Cold Email Deliverability Playbook for 2026</title>
+    <link>https://ethergtm.co/blog/cold-email-deliverability-playbook-2026/</link>
+    <guid isPermaLink="true">https://ethergtm.co/blog/cold-email-deliverability-playbook-2026/</guid>
+    <description>Why most cold email campaigns die in spam folders, and the exact infrastructure setup we use to keep client domains out of trouble.</description>
+    <author>Swapnesh Patra</author>
+    <category>Outbound</category>
+    <pubDate>Mon, 12 Jan 2026 00:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>

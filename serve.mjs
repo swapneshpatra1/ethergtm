@@ -1,5 +1,5 @@
 import { createServer } from 'http';
-import { readFile } from 'fs/promises';
+import { readFile, stat } from 'fs/promises';
 import { extname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -26,7 +26,14 @@ createServer(async (req, res) => {
   let url = req.url.split('?')[0];
   if (url === '/') url = '/index.html';
 
-  const file = join(__dirname, url);
+  let file = join(__dirname, url);
+
+  try {
+    if ((await stat(file)).isDirectory()) file = join(file, 'index.html');
+  } catch {
+    // not a directory (or doesn't exist) — fall through to the readFile attempt below
+  }
+
   const type = mime[extname(file).toLowerCase()] ?? 'application/octet-stream';
 
   try {

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Outreach Sequences That Convert in 2026 — etherGTM Blog</title>
+  <meta name="description" content="Connection request, pitch, follow-up — the sequence everyone runs, and the reason it converts worse every year. Here's what we run instead." />
+  <link rel="canonical" href="https://ethergtm.co/blog/linkedin-sequences-that-convert/" />
+  <link rel="alternate" type="application/rss+xml" title="etherGTM Blog" href="https://ethergtm.co/rss.xml" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEJ6CC3HM2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZEJ6CC3HM2');
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950: '#040B18', 900: '#080F20', 800: '#0D1830', 700: '#112244' },
+            brand: '#1C7EFF',
+            cyan:  '#00C4FF',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+    .grad        { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%); }
+    .grad-text   { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%);
+                   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                   background-clip: text; }
+
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.035;
+    }
+
+    .nav-link { position: relative; transition: color 0.2s; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1.5px;
+      background: linear-gradient(90deg, #1C7EFF, #00C4FF); transition: width 0.25s ease;
+    }
+    .nav-link:hover { color: #1C7EFF; }
+    .nav-link:hover::after { width: 100%; }
+
+    .btn-pri {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%);
+      color: #fff; font-weight: 600; border-radius: 10px; cursor: pointer;
+      transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-pri:hover  { transform: translateY(-2px); box-shadow: 0 12px 36px -4px rgba(28,126,255,.45); }
+    .btn-pri:active { transform: translateY(0); box-shadow: none; }
+    .btn-pri:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 3px; }
+
+    .post-card { transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease; }
+    .post-card:hover { transform: translateY(-5px); box-shadow: 0 24px 64px -12px rgba(28,126,255,.18); }
+    .post-card:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 3px; }
+
+    .cat-pill { transition: background 0.2s, border-color 0.2s, color 0.2s; text-decoration: none; }
+    .cat-pill:hover { border-color: #1C7EFF; color: #1C7EFF; }
+    .cat-pill:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 2px; }
+    .cat-pill.active { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%); color: #fff; border-color: transparent; }
+
+    .tag-pill { transition: background 0.2s, color 0.2s; text-decoration: none; }
+    .tag-pill:hover { background: #E2EEFF; color: #1C7EFF; }
+    .tag-pill:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 2px; }
+
+    .toc a { transition: color 0.2s; }
+    .toc a:hover { color: #1C7EFF; }
+
+    .orb { border-radius: 50%; filter: blur(90px); position: absolute; pointer-events: none; }
+
+    .post-body { color: #374151; line-height: 1.85; font-size: 1.0625rem; }
+    .post-body h2 { font-size: 1.625rem; font-weight: 800; color: #0D1830; letter-spacing: -0.02em; margin: 2.5rem 0 1rem; }
+    .post-body h3 { font-size: 1.25rem; font-weight: 700; color: #0D1830; letter-spacing: -0.01em; margin: 2rem 0 0.75rem; }
+    .post-body p  { margin: 0 0 1.25rem; }
+    .post-body ul, .post-body ol { margin: 0 0 1.25rem; padding-left: 1.5rem; }
+    .post-body li { margin-bottom: 0.5rem; }
+    .post-body ul li { list-style: disc; }
+    .post-body ol li { list-style: decimal; }
+    .post-body a { color: #1C7EFF; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(28,126,255,.3); }
+    .post-body a:hover { text-decoration-color: #1C7EFF; }
+    .post-body strong { color: #0D1830; font-weight: 700; }
+    .post-body blockquote { margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid #1C7EFF; background: #F4F8FF; border-radius: 0 12px 12px 0; color: #112244; font-style: italic; }
+    .post-body code { background: #EFF5FF; color: #112244; padding: 0.15rem 0.4rem; border-radius: 6px; font-size: 0.9em; }
+    .post-body img { border-radius: 16px; margin: 1.5rem 0; }
+  </style>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"LinkedIn Outreach Sequences That Convert in 2026","description":"Connection request, pitch, follow-up — the sequence everyone runs, and the reason it converts worse every year. Here's what we run instead.","image":"https://placehold.co/1200x630/0D1830/60AAFF?text=LinkedIn+Sequences","datePublished":"2026-05-10T00:00:00.000Z","dateModified":"2026-05-10T00:00:00.000Z","articleSection":"Outbound","keywords":"linkedin, sequences, social-selling","author":{"@type":"Person","name":"Swapnesh Patra"},"publisher":{"@type":"Organization","name":"etherGTM","logo":{"@type":"ImageObject","url":"https://ethergtm.co/ethergtm-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ethergtm.co/blog/linkedin-sequences-that-convert/"}}</script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md"
+          style="background:rgba(8,15,32,0.95);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+      <a href="/" aria-label="etherGTM home" class="flex items-center flex-shrink-0">
+        <img src="/ethergtm-logo.png" alt="etherGTM" style="width:200px;height:auto;border-radius:10px;" />
+      </a>
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="/index.html#services"  class="nav-link text-sm font-medium text-gray-300">Services</a>
+        <a href="/index.html#process"   class="nav-link text-sm font-medium text-gray-300">How It Works</a>
+        <a href="/index.html#why-us"    class="nav-link text-sm font-medium text-gray-300">Why etherGTM</a>
+        <a href="/blog/" class="nav-link text-sm font-medium text-gray-300">Blog</a>
+        <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="nav-link text-sm font-medium text-gray-300">Contact</a>
+      </nav>
+      <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri text-sm px-5 py-2.5">Book a Call</a>
+    </div>
+  </header>
+
+  <article>
+    <section class="relative overflow-hidden grain" style="background:#080F20;padding:160px 0 64px;">
+      <div class="orb" style="width:420px;height:420px;top:-100px;right:-80px;background:#00C4FF;opacity:.1;"></div>
+      <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-10">
+        <nav class="text-sm mb-6" style="color:rgba(255,255,255,.4);">
+          <a href="/" class="hover:text-white">Home</a> /
+          <a href="/blog/" class="hover:text-white">Blog</a> /
+          <a href="/blog/category/outbound/" class="hover:text-white">Outbound</a>
+        </nav>
+        <h1 class="text-3xl lg:text-5xl font-extrabold text-white mb-6" style="letter-spacing:-0.03em;line-height:1.15;">LinkedIn Outreach Sequences That Convert in 2026</h1>
+        <p class="text-lg text-gray-300 mb-8" style="line-height:1.75;">Connection request, pitch, follow-up — the sequence everyone runs, and the reason it converts worse every year. Here's what we run instead.</p>
+        <div class="flex items-center gap-3 text-sm" style="color:rgba(255,255,255,.5);">
+          <a href="/blog/author/swapnesh-patra/" class="font-medium text-white hover:text-[#60AAFF]">Swapnesh Patra</a>
+          <span>&middot;</span>
+          <time datetime="2026-05-10T00:00:00.000Z">May 10, 2026</time>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 lg:py-20 bg-white">
+      <div class="max-w-3xl mx-auto px-6 lg:px-10">
+        <div class="aspect-[16/9] overflow-hidden rounded-2xl mb-10" style="background:#EEF5FF;">
+          <img src="https://placehold.co/1200x630/0D1830/60AAFF?text=LinkedIn+Sequences" alt="LinkedIn Outreach Sequences That Convert in 2026" class="w-full h-full object-cover" />
+        </div>
+        
+        <div class="toc rounded-2xl p-6 mb-10" style="background:#F4F8FF;border:1.5px solid #DDE8F8;">
+          <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:#1C7EFF;">On this page</p>
+          <ul class="space-y-2">
+            <li style="margin-left:0px;"><a href="#why-the-standard-sequence-stopped-working" class="text-sm text-gray-500">Why the standard sequence stopped working</a></li>
+<li style="margin-left:0px;"><a href="#the-sequence-we-run-instead" class="text-sm text-gray-500">The sequence we run instead</a></li>
+<li style="margin-left:0px;"><a href="#profile-optimization-is-half-the-work" class="text-sm text-gray-500">Profile optimization is half the work</a></li>
+<li style="margin-left:0px;"><a href="#measuring-what39s-working" class="text-sm text-gray-500">Measuring what&amp;#39;s working</a></li>
+          </ul>
+        </div>
+        <div class="post-body">
+          <p>LinkedIn connection acceptance rates have dropped steadily for three years running, mostly because everyone runs the same three-message sequence: connect, pitch immediately, follow up once, give up. Prospects have learned to recognize it instantly.</p>
+<h2 id="why-the-standard-sequence-stopped-working">Why the standard sequence stopped working</h2>
+<p>When every cold connection request is followed by an immediate pitch, the prospect&#39;s brain pattern-matches &quot;salesperson&quot; before reading a word of the message. The fix isn&#39;t a cleverer pitch — it&#39;s removing the pitch from the first few touches entirely.</p>
+<h2 id="the-sequence-we-run-instead">The sequence we run instead</h2>
+<ul>
+<li><strong>Touch 1 — connection request, no message.</strong> A blank request converts better than a pitchy one; let the profile do the talking.</li>
+<li><strong>Touch 2 — a genuine, specific comment</strong> on something they posted or a company update, sent 2-3 days after acceptance.</li>
+<li><strong>Touch 3 — a low-commitment question</strong>, not a pitch: something tied to a real problem their role would face.</li>
+<li><strong>Touch 4 — the actual offer</strong>, framed around the answer (or silence) from touch 3.</li>
+</ul>
+<p>This stretches the sequence to 10-14 days instead of 3, which feels slower but converts at meaningfully higher rates because the prospect has context before the ask arrives.</p>
+<h2 id="profile-optimization-is-half-the-work">Profile optimization is half the work</h2>
+<p>None of this works if the sender&#39;s profile looks like a lead-gen account. We rebuild every client rep&#39;s profile before launching a single sequence: a headline that states a real value proposition instead of a job title, a banner that reinforces it, and a featured section with actual proof — case studies, testimonials, or a short video.</p>
+<blockquote>
+<p>A prospect checks your profile before deciding whether to reply. If it looks like a sales account, the message doesn&#39;t matter.</p>
+</blockquote>
+<h2 id="measuring-what39s-working">Measuring what&#39;s working</h2>
+<p>Track connection acceptance rate and reply rate separately — a sequence can have a great acceptance rate and a terrible reply rate if the messaging after the connect is off. We re-test message variants on a rolling two-week cycle, never letting a sequence run unchanged for more than that.</p>
+
+        </div>
+        <div class="flex flex-wrap gap-2 mt-6"><a href="/blog/tag/linkedin/" class="tag-pill inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" style="background:#F4F8FF;color:#5B7390;">#linkedin</a><a href="/blog/tag/sequences/" class="tag-pill inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" style="background:#F4F8FF;color:#5B7390;">#sequences</a><a href="/blog/tag/social-selling/" class="tag-pill inline-flex items-center px-3 py-1 rounded-full text-xs font-medium" style="background:#F4F8FF;color:#5B7390;">#social-selling</a></div>
+      </div>
+    </section>
+
+    
+    <section class="py-20 lg:py-24" style="background:#F4F8FF;">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <h2 class="text-3xl font-bold text-gray-900 mb-10" style="letter-spacing:-0.02em;">Related Articles</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+  <a href="/blog/cold-email-deliverability-playbook-2026/" class="post-card rounded-2xl overflow-hidden flex flex-col" style="background:#fff;border:1.5px solid #DDE8F8;text-decoration:none;">
+    <div class="aspect-[16/9] overflow-hidden" style="background:#EEF5FF;">
+      <img src="https://placehold.co/1200x630/0D1830/60AAFF?text=Deliverability+Playbook" alt="The Cold Email Deliverability Playbook for 2026" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+      <div class="mb-3"><span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest" style="background:#EBF3FF;color:#1C7EFF;border:1px solid #DDE8F8;">Outbound</span></div>
+      <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.02em;line-height:1.35;">The Cold Email Deliverability Playbook for 2026</h3>
+      <p class="text-sm text-gray-400 mb-4 flex-1" style="line-height:1.7;">Why most cold email campaigns die in spam folders, and the exact infrastructure setup we use to keep client domains out of trouble.</p>
+      <div class="flex items-center gap-2 text-xs text-gray-400 mt-auto">
+        <span>Swapnesh Patra</span>
+        <span>&middot;</span>
+        <span>January 12, 2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="/blog/ai-lead-qualification-before-crm/" class="post-card rounded-2xl overflow-hidden flex flex-col" style="background:#fff;border:1.5px solid #DDE8F8;text-decoration:none;">
+    <div class="aspect-[16/9] overflow-hidden" style="background:#EEF5FF;">
+      <img src="https://placehold.co/1200x630/0D1830/00C4FF?text=AI+Lead+Qualification" alt="Using AI to Qualify Leads Before They Ever Hit Your CRM" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+      <div class="mb-3"><span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest" style="background:#EBF3FF;color:#1C7EFF;border:1px solid #DDE8F8;">AI Automation</span></div>
+      <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.02em;line-height:1.35;">Using AI to Qualify Leads Before They Ever Hit Your CRM</h3>
+      <p class="text-sm text-gray-400 mb-4 flex-1" style="line-height:1.7;">Every unqualified lead that reaches a rep's calendar costs more than the meeting it wastes. Here's how we use AI to filter before, not after, the meeting gets booked.</p>
+      <div class="flex items-center gap-2 text-xs text-gray-400 mt-auto">
+        <span>Swapnesh Patra</span>
+        <span>&middot;</span>
+        <span>June 8, 2026</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="/blog/revops-metrics-that-predict-pipeline/" class="post-card rounded-2xl overflow-hidden flex flex-col" style="background:#fff;border:1.5px solid #DDE8F8;text-decoration:none;">
+    <div class="aspect-[16/9] overflow-hidden" style="background:#EEF5FF;">
+      <img src="https://placehold.co/1200x630/0D1830/7BBEFF?text=RevOps+Metrics" alt="RevOps Metrics That Actually Predict Pipeline Health" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+      <div class="mb-3"><span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest" style="background:#EBF3FF;color:#1C7EFF;border:1px solid #DDE8F8;">RevOps</span></div>
+      <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.02em;line-height:1.35;">RevOps Metrics That Actually Predict Pipeline Health</h3>
+      <p class="text-sm text-gray-400 mb-4 flex-1" style="line-height:1.7;">Meetings booked is a vanity metric if nothing downstream is tracked. Here are the RevOps metrics that tell you whether outbound is actually working.</p>
+      <div class="flex items-center gap-2 text-xs text-gray-400 mt-auto">
+        <span>Swapnesh Patra</span>
+        <span>&middot;</span>
+        <span>April 2, 2026</span>
+      </div>
+    </div>
+  </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden grain py-20" style="background:#080F20;">
+      <div class="orb" style="width:320px;height:320px;bottom:-80px;left:-60px;background:#1C7EFF;opacity:.1;"></div>
+      <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-10 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4" style="letter-spacing:-0.03em;">Want results like this in your own pipeline?</h2>
+        <p class="text-gray-300 mb-8" style="line-height:1.75;">Book a free strategy call and we'll map out a campaign plan for your ICP.</p>
+        <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri text-base px-8 py-4">Book My Free Strategy Call</a>
+      </div>
+    </section>
+  </article>
+
+  <footer style="background:#040B18;border-top:1px solid rgba(255,255,255,.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="/" class="flex items-center">
+          <img src="/ethergtm-logo.png" alt="etherGTM" style="width:180px;height:auto;border-radius:8px;" />
+        </a>
+        <div class="flex items-center gap-6 text-sm" style="color:rgba(255,255,255,.4);">
+          <a href="/index.html#services" class="hover:text-white transition-colors">Services</a>
+          <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+          <a href="/index.html#why-us" class="hover:text-white transition-colors">Why Us</a>
+          <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <p class="text-xs" style="color:rgba(255,255,255,.25);">&copy; 2026 etherGTM. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

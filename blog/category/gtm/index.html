@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM Articles — etherGTM Blog</title>
+  <meta name="description" content="Articles about GTM from the etherGTM team." />
+  <link rel="canonical" href="https://ethergtm.co/blog/category/gtm/" />
+  <link rel="alternate" type="application/rss+xml" title="etherGTM Blog" href="https://ethergtm.co/rss.xml" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEJ6CC3HM2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZEJ6CC3HM2');
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950: '#040B18', 900: '#080F20', 800: '#0D1830', 700: '#112244' },
+            brand: '#1C7EFF',
+            cyan:  '#00C4FF',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+    .grad        { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%); }
+    .grad-text   { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%);
+                   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                   background-clip: text; }
+
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.035;
+    }
+
+    .nav-link { position: relative; transition: color 0.2s; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1.5px;
+      background: linear-gradient(90deg, #1C7EFF, #00C4FF); transition: width 0.25s ease;
+    }
+    .nav-link:hover { color: #1C7EFF; }
+    .nav-link:hover::after { width: 100%; }
+
+    .btn-pri {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%);
+      color: #fff; font-weight: 600; border-radius: 10px; cursor: pointer;
+      transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-pri:hover  { transform: translateY(-2px); box-shadow: 0 12px 36px -4px rgba(28,126,255,.45); }
+    .btn-pri:active { transform: translateY(0); box-shadow: none; }
+    .btn-pri:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 3px; }
+
+    .post-card { transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease; }
+    .post-card:hover { transform: translateY(-5px); box-shadow: 0 24px 64px -12px rgba(28,126,255,.18); }
+    .post-card:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 3px; }
+
+    .cat-pill { transition: background 0.2s, border-color 0.2s, color 0.2s; text-decoration: none; }
+    .cat-pill:hover { border-color: #1C7EFF; color: #1C7EFF; }
+    .cat-pill:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 2px; }
+    .cat-pill.active { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%); color: #fff; border-color: transparent; }
+
+    .tag-pill { transition: background 0.2s, color 0.2s; text-decoration: none; }
+    .tag-pill:hover { background: #E2EEFF; color: #1C7EFF; }
+    .tag-pill:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 2px; }
+
+    .toc a { transition: color 0.2s; }
+    .toc a:hover { color: #1C7EFF; }
+
+    .orb { border-radius: 50%; filter: blur(90px); position: absolute; pointer-events: none; }
+
+    .post-body { color: #374151; line-height: 1.85; font-size: 1.0625rem; }
+    .post-body h2 { font-size: 1.625rem; font-weight: 800; color: #0D1830; letter-spacing: -0.02em; margin: 2.5rem 0 1rem; }
+    .post-body h3 { font-size: 1.25rem; font-weight: 700; color: #0D1830; letter-spacing: -0.01em; margin: 2rem 0 0.75rem; }
+    .post-body p  { margin: 0 0 1.25rem; }
+    .post-body ul, .post-body ol { margin: 0 0 1.25rem; padding-left: 1.5rem; }
+    .post-body li { margin-bottom: 0.5rem; }
+    .post-body ul li { list-style: disc; }
+    .post-body ol li { list-style: decimal; }
+    .post-body a { color: #1C7EFF; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(28,126,255,.3); }
+    .post-body a:hover { text-decoration-color: #1C7EFF; }
+    .post-body strong { color: #0D1830; font-weight: 700; }
+    .post-body blockquote { margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid #1C7EFF; background: #F4F8FF; border-radius: 0 12px 12px 0; color: #112244; font-style: italic; }
+    .post-body code { background: #EFF5FF; color: #112244; padding: 0.15rem 0.4rem; border-radius: 6px; font-size: 0.9em; }
+    .post-body img { border-radius: 16px; margin: 1.5rem 0; }
+  </style>
+
+
+</head>
+<body class="bg-white text-gray-900">
+
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md"
+          style="background:rgba(8,15,32,0.95);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+      <a href="/" aria-label="etherGTM home" class="flex items-center flex-shrink-0">
+        <img src="/ethergtm-logo.png" alt="etherGTM" style="width:200px;height:auto;border-radius:10px;" />
+      </a>
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="/index.html#services"  class="nav-link text-sm font-medium text-gray-300">Services</a>
+        <a href="/index.html#process"   class="nav-link text-sm font-medium text-gray-300">How It Works</a>
+        <a href="/index.html#why-us"    class="nav-link text-sm font-medium text-gray-300">Why etherGTM</a>
+        <a href="/blog/" class="nav-link text-sm font-medium text-gray-300">Blog</a>
+        <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="nav-link text-sm font-medium text-gray-300">Contact</a>
+      </nav>
+      <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri text-sm px-5 py-2.5">Book a Call</a>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden grain" style="background:#080F20;padding:160px 0 64px;">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 text-center">
+      <span class="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-6" style="background:rgba(28,126,255,.12);border:1px solid rgba(28,126,255,.35);color:#60AAFF;">Category</span>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white" style="letter-spacing:-0.03em;">GTM</h1>
+    </div>
+  </section>
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="mb-12"><div class="flex flex-wrap gap-3"><a href="/blog/" class="cat-pill px-4 py-2 rounded-full text-sm font-semibold " style="border:1.5px solid #DDE8F8;color:#374151;">All Posts</a><a href="/blog/category/outbound/" class="cat-pill px-4 py-2 rounded-full text-sm font-semibold " style="border:1.5px solid #DDE8F8;color:#374151;">Outbound</a>
+<a href="/blog/category/gtm/" class="cat-pill px-4 py-2 rounded-full text-sm font-semibold active" style="border:1.5px solid #DDE8F8;color:#374151;">GTM</a>
+<a href="/blog/category/ai-automation/" class="cat-pill px-4 py-2 rounded-full text-sm font-semibold " style="border:1.5px solid #DDE8F8;color:#374151;">AI Automation</a>
+<a href="/blog/category/revops/" class="cat-pill px-4 py-2 rounded-full text-sm font-semibold " style="border:1.5px solid #DDE8F8;color:#374151;">RevOps</a></div></div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <a href="/blog/gtm-motion-without-inbound/" class="post-card rounded-2xl overflow-hidden flex flex-col" style="background:#fff;border:1.5px solid #DDE8F8;text-decoration:none;">
+    <div class="aspect-[16/9] overflow-hidden" style="background:#EEF5FF;">
+      <img src="https://placehold.co/1200x630/0D1830/1C7EFF?text=GTM+Without+Inbound" alt="Building a GTM Motion That Doesn't Rely on Inbound" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <div class="p-6 flex flex-col flex-1">
+      <div class="mb-3"><span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest" style="background:#EBF3FF;color:#1C7EFF;border:1px solid #DDE8F8;">GTM</span></div>
+      <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.02em;line-height:1.35;">Building a GTM Motion That Doesn't Rely on Inbound</h3>
+      <p class="text-sm text-gray-400 mb-4 flex-1" style="line-height:1.7;">Inbound is a great channel until your category gets crowded or your CAC creeps up. Here's how to build a GTM motion that doesn't wait for someone to find you.</p>
+      <div class="flex items-center gap-2 text-xs text-gray-400 mt-auto">
+        <span>Swapnesh Patra</span>
+        <span>&middot;</span>
+        <span>March 5, 2026</span>
+      </div>
+    </div>
+  </a></div>
+    </div>
+  </section>
+
+  <footer style="background:#040B18;border-top:1px solid rgba(255,255,255,.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="/" class="flex items-center">
+          <img src="/ethergtm-logo.png" alt="etherGTM" style="width:180px;height:auto;border-radius:8px;" />
+        </a>
+        <div class="flex items-center gap-6 text-sm" style="color:rgba(255,255,255,.4);">
+          <a href="/index.html#services" class="hover:text-white transition-colors">Services</a>
+          <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+          <a href="/index.html#why-us" class="hover:text-white transition-colors">Why Us</a>
+          <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <p class="text-xs" style="color:rgba(255,255,255,.25);">&copy; 2026 etherGTM. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
