@@ -154,6 +154,10 @@ const HEAD_ASSETS = `
     .post-body blockquote { margin: 1.5rem 0; padding: 1rem 1.5rem; border-left: 3px solid #1C7EFF; background: #F4F8FF; border-radius: 0 12px 12px 0; color: #112244; font-style: italic; }
     .post-body code { background: #EFF5FF; color: #112244; padding: 0.15rem 0.4rem; border-radius: 6px; font-size: 0.9em; }
     .post-body img { border-radius: 16px; margin: 1.5rem 0; }
+    .post-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9375rem; }
+    .post-body th, .post-body td { padding: 0.75rem 1rem; border: 1px solid #DDE8F8; text-align: left; }
+    .post-body th { background: #F4F8FF; color: #0D1830; font-weight: 700; }
+    .post-body tr:nth-child(even) td { background: #FAFBFF; }
   </style>
 `;
 
