@@ -3,517 +3,853 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>etherGTM — B2B Lead Generation Agency</title>
+  <title>etherGTM — B2B Outbound That Books Meetings</title>
+  <meta name="description" content="etherGTM builds and runs done-for-you email and LinkedIn outbound for B2B companies. We handle targeting, infrastructure, copy, and delivery — you take the calls." />
 
-  <!-- Google tag (gtag.js) -->
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEJ6CC3HM2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZEJ6CC3HM2');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZEJ6CC3HM2')</script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950: '#040B18', 900: '#080F20', 800: '#0D1830', 700: '#112244' },
-            brand: '#1C7EFF',
-            cyan:  '#00C4FF',
-          },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-        }
-      }
-    }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
+    /* ── Tokens ──────────────────────────────────────────── */
+    :root {
+      --bg:      #060E1B;
+      --bg-2:    #0A1628;
+      --bg-card: #0D1A30;
+      --bg-lt:   #F5F8FF;
+      --primary: #0D6EFD;
+      --accent:  #00D4FF;
+      --bdr:     rgba(255,255,255,.08);
+      --bdr-b:   rgba(13,110,253,.2);
+      --text:    #FFFFFF;
+      --muted:   rgba(255,255,255,.5);
+      --faint:   rgba(255,255,255,.2);
+      --dark:    #060E1B;
+      --dk-m:    rgba(6,14,27,.5);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-
-    .grad        { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%); }
-    .grad-text   { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%);
-                   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-                   background-clip: text; }
-    .grad-border { border: 1.5px solid transparent;
-                   background: linear-gradient(#fff, #fff) padding-box,
-                               linear-gradient(135deg, #1C7EFF, #00C4FF) border-box; }
-
-    /* Noise grain */
-    .grain::after {
-      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.035;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg); color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    /* Nav link underline */
-    .nav-link { position: relative; transition: color 0.2s; }
-    .nav-link::after {
-      content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1.5px;
-      background: linear-gradient(90deg, #1C7EFF, #00C4FF); transition: width 0.25s ease;
+    /* ── Grain ─────────────────────────────────────────── */
+    .grain {
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
     }
-    .nav-link:hover { color: #1C7EFF; }
-    .nav-link:hover::after { width: 100%; }
 
-    /* Buttons */
-    .btn-pri {
-      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-      background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%);
-      color: #fff; font-weight: 600; border-radius: 10px; cursor: pointer;
-      transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease;
+    /* ── Type ──────────────────────────────────────────── */
+    .t-xl { font-size: clamp(2.8rem,6.5vw,5.5rem); font-weight: 800; line-height: 1.04; letter-spacing: -.04em; }
+    .t-lg { font-size: clamp(2rem,4vw,3.5rem); font-weight: 800; line-height: 1.08; letter-spacing: -.035em; }
+    .wrap { max-width: 1200px; margin: 0 auto; }
+
+    /* Instrument Serif for all italic/em moments */
+    .em i, em, .hero-title em, .t-xl em, .t-lg em, .cta-title em {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -.01em;
+    }
+    /* JetBrains Mono for numbers, eyebrow tags, stats */
+    .eyebrow-tag, .h-sn, .process-card-big-num, .svc-num, .b-n, .cta-step-lbl {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    /* ── Em underline ──────────────────────────────────── */
+    .em { position: relative; display: inline-block; vertical-align: baseline; }
+    .em i { font-style: italic; }
+    .em-line {
+      position: absolute; left: 0; bottom: -.18em;
+      width: 100%; height: .28em; overflow: visible; pointer-events: none;
+    }
+    /* SVG underline draw-in — triggered when .is-visible parent reaches viewport */
+    @keyframes underline-draw {
+      from { stroke-dashoffset: 100; }
+      to   { stroke-dashoffset: 0; }
+    }
+    .em-line path {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+    }
+    .hero-title .em-line path {
+      animation: underline-draw .9s cubic-bezier(.16,1,.3,1) .6s forwards;
+    }
+    .is-visible .em-line path, .em-line.is-drawn path {
+      animation: underline-draw .8s cubic-bezier(.16,1,.3,1) .1s forwards;
+    }
+
+    /* ── Eyebrow (Wibify pattern: bar + [01] tag + label) ── */
+    .eyebrow {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1.75rem;
+    }
+    .eyebrow-bar {
+      display: block; width: 24px; height: 1.5px;
+      background: var(--primary); flex-shrink: 0;
+    }
+    .eyebrow-tag {
+      color: var(--faint); letter-spacing: .06em; flex-shrink: 0;
+    }
+    .eyebrow--dk { color: var(--dk-m); }
+    .eyebrow--dk .eyebrow-bar { background: var(--primary); }
+    .eyebrow--dk .eyebrow-tag { color: rgba(6,14,27,.3); }
+
+    /* ── Hero word animation ─────────────────────────── */
+    @keyframes word-in {
+      from { opacity: 0; transform: translateY(.6em); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-title .word {
+      display: inline-block;
+      opacity: 0;
+      animation: word-in .65s cubic-bezier(.16,1,.3,1) forwards;
+      animation-delay: calc(.05s + var(--i,0) * .07s);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-title .word { opacity: 1; animation: none; }
+    }
+
+    /* ── Text-roll (Wibify letter-by-letter hover) ──── */
+    .text-roll {
+      position: relative;
+      display: inline-flex; overflow: hidden;
+      height: 1.18em; vertical-align: bottom;
+    }
+    .text-roll-row { display: flex; align-items: baseline; flex-shrink: 0; }
+    .text-roll-clone { position: absolute; top: 100%; left: 0; }
+    .text-roll-letter {
+      display: inline-block;
+      transition: transform .45s cubic-bezier(.16,1,.3,1);
+      transition-delay: calc(var(--i,0) * .018s);
+    }
+    .svc-row a:hover .text-roll-letter { transform: translateY(-100%); }
+    .ch-card:hover .text-roll-letter   { transform: translateY(-100%); }
+
+    /* ── Shiny CTA (Wibify shimmer sweep) ────────────── */
+    .shiny-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: .875rem 1.75rem; font-size: .9375rem; font-weight: 600;
+      color: #fff; background: var(--primary); border-radius: 8px;
+      text-decoration: none; cursor: pointer; border: none;
+      position: relative; overflow: hidden; isolation: isolate;
+      box-shadow: 0 4px 20px rgba(13,110,253,.32);
+      transition: opacity .2s, transform .15s, box-shadow .2s;
+    }
+    .shiny-cta::before {
+      content: '';
+      position: absolute; top: 0; left: -100%; width: 55%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+      transform: skewX(-15deg);
+      animation: shimmer 3.5s ease infinite;
+    }
+    @keyframes shimmer {
+      0%, 25% { left: -100%; }
+      100%     { left: 160%; }
+    }
+    .shiny-cta:hover { opacity: .92; transform: translateY(-1px); box-shadow: 0 10px 28px rgba(13,110,253,.48); }
+    .shiny-cta:active { transform: translateY(0); }
+    .shiny-cta--sm { padding: .5rem 1.2rem; font-size: .875rem; border-radius: 6px; }
+
+    /* ── Ghost button ────────────────────────────────── */
+    .btn-g {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: .875rem 1.5rem; font-size: .9375rem; font-weight: 500;
+      color: var(--muted); border: 1px solid var(--bdr); border-radius: 8px;
       text-decoration: none;
+      transition: color .2s, border-color .2s;
     }
-    .btn-pri:hover  { transform: translateY(-2px); box-shadow: 0 12px 36px -4px rgba(28,126,255,.45); }
-    .btn-pri:active { transform: translateY(0); box-shadow: none; }
-    .btn-pri:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 3px; }
+    .btn-g:hover { color: #fff; border-color: rgba(255,255,255,.22); }
 
-    .btn-ghost {
-      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-      color: rgba(255,255,255,.8); font-weight: 600; border-radius: 10px;
-      border: 1.5px solid rgba(255,255,255,.2); cursor: pointer;
-      transition: background 0.2s, border-color 0.2s, color 0.2s; text-decoration: none;
+    /* ── NAV ─────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 2rem;
+      background: rgba(6,14,27,.0);
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+      transition: background .35s, backdrop-filter .35s, border-color .35s;
     }
-    .btn-ghost:hover  { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.35); color: #fff; }
-    .btn-ghost:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-
-    /* Cards */
-    .service-card { transition: transform 0.3s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease; }
-    .service-card:hover { transform: translateY(-5px); }
-
-    .service-card-light:hover  { box-shadow: 0 24px 64px -12px rgba(28,126,255,.18); }
-    .service-card-dark:hover   { box-shadow: 0 24px 64px -12px rgba(0,196,255,.18); }
-
-    .why-card {
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    .nav--scrolled {
+      background: rgba(6,14,27,.92);
+      backdrop-filter: blur(14px) saturate(1.6);
+      border-bottom-color: var(--bdr);
     }
-    .why-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -8px rgba(28,126,255,.12); background: #EFF5FF; }
+    .nav-in { max-width: 1200px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo-t { font-size: 1.1rem; font-weight: 700; color: #fff; letter-spacing: -.02em; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
 
-/* Stat number */
-    .stat-num { font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+    /* ── HERO ────────────────────────────────────────── */
+    .hero {
+      background: var(--bg); padding: 10rem 2rem 7rem;
+      position: relative; overflow: hidden;
+    }
+    @keyframes glow-pulse {
+      0%, 100% { opacity: .55; transform: scale(1) translateX(-50%); }
+      50%       { opacity: .8;  transform: scale(1.08) translateX(-50%); }
+    }
+    @keyframes glow-drift {
+      0%, 100% { opacity: .35; transform: translate(0, 0); }
+      50%       { opacity: .6;  transform: translate(-30px, 20px); }
+    }
+    .hero-bg-light {
+      position: absolute; top: -20%; left: 50%;
+      width: 70%; height: 60%; pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(13,110,253,.13) 0%, transparent 68%);
+      animation: glow-pulse 7s ease-in-out infinite;
+    }
+    .hero-bg-light-2 {
+      position: absolute; top: 25%; right: -10%; width: 520px; height: 520px;
+      pointer-events: none;
+      background: radial-gradient(ellipse, rgba(0,212,255,.07) 0%, transparent 65%);
+      animation: glow-drift 9s ease-in-out infinite;
+    }
+    .hero-in { max-width: 1200px; margin: 0 auto; position: relative; }
+    .hero-title { max-width: 760px; margin: 0 0 1.75rem; }
+    .hero-title .word-em { /* special word that contains the em */ }
+    .hero-sub { font-size: 1.0625rem; line-height: 1.75; color: var(--muted); max-width: 50ch; margin: 0 0 2.5rem; }
+    .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 5rem; }
+    .hero-stats { display: flex; gap: 3.5rem; flex-wrap: wrap; padding-top: 3rem; border-top: 1px solid var(--bdr); }
+    .h-sn { font-size: 2.25rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; margin-bottom: .25rem; }
+    .h-sl { font-size: .8125rem; color: var(--muted); }
 
-    /* Orb glow */
-    .orb { border-radius: 50%; filter: blur(90px); position: absolute; pointer-events: none; }
+    /* ── SERVICES LIST ─────────────────────────────── */
+    .svc-list { background: var(--bg-lt); padding: 7rem 2rem; }
+    .svc-rows { list-style: none; border-top: 1px solid rgba(6,14,27,.1); margin-top: 2.5rem; }
+    .svc-row { border-bottom: 1px solid rgba(6,14,27,.1); }
+    .svc-row a {
+      display: grid; grid-template-columns: 3rem 1fr auto 7rem 1.75rem;
+      align-items: center; gap: 1.75rem;
+      padding: 1.75rem 0; text-decoration: none; color: inherit;
+      transition: opacity .2s;
+    }
+    .svc-row a:hover { opacity: .65; }
+    .svc-row a:hover .svc-arr { transform: translate(3px,-3px); }
+    .svc-num  { font-size: .8125rem; font-weight: 600; color: var(--dk-m); font-variant-numeric: tabular-nums; }
+    .svc-name { font-size: 1.3125rem; font-weight: 700; letter-spacing: -.025em; color: var(--dark); }
+    .svc-tag  { display: inline-block; padding: .25rem .875rem; border: 1px solid rgba(6,14,27,.12); border-radius: 100px; font-size: .75rem; font-weight: 500; color: var(--dk-m); }
+    .svc-type { font-size: .8125rem; color: var(--dk-m); text-align: right; }
+    .svc-arr  { font-size: 1.1rem; color: var(--dk-m); transition: transform .2s ease; }
+
+    /* ── CHANNEL CARDS ─────────────────────────────── */
+    .channels { background: var(--bg-2); padding: 7rem 2rem; }
+    .ch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+    .ch-card {
+      position: relative; overflow: hidden; padding: 2.5rem; border-radius: 16px;
+      border: 1px solid var(--bdr); background: var(--bg-card);
+      transition: border-color .25s, box-shadow .25s, transform .25s cubic-bezier(.16,1,.3,1);
+    }
+    /* Top accent line — Wibify service-card-accent pattern */
+    .ch-card::before {
+      content: '';
+      position: absolute; top: 0; left: 10%; width: 80%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(13,110,253,.5), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .ch-card:hover { border-color: var(--bdr-b); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(13,110,253,.12); }
+    .ch-card:hover::before { opacity: 1; }
+    .ch-wm {
+      position: absolute; top: -12px; right: 16px;
+      font-size: 9rem; font-weight: 900; letter-spacing: -.05em;
+      color: rgba(255,255,255,.03); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+    .ch-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(13,110,253,.14); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+    .ch-icon svg { width: 22px; height: 22px; color: var(--accent); }
+    .ch-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -.025em; margin-bottom: .75rem; }
+    .ch-desc  { font-size: .9375rem; line-height: 1.7; color: var(--muted); margin-bottom: 1.75rem; }
+    .ch-feats { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin-bottom: 2rem; }
+    .ch-feats li { display: flex; align-items: flex-start; gap: .65rem; font-size: .875rem; color: var(--muted); line-height: 1.55; }
+    .ch-feats li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); margin-top: .42em; flex-shrink: 0; }
+    .ch-link { display: inline-flex; align-items: center; gap: 7px; font-size: .875rem; font-weight: 600; color: var(--accent); text-decoration: none; transition: gap .2s; }
+    .ch-link:hover { gap: 12px; }
+
+    /* ── PROCESS (stacked sticky cards) ─────────────── */
+    .process-outer { background: var(--bg-lt); padding: 7rem 2rem 0; }
+    .process-section {
+      padding-bottom: 2rem;
+    }
+    .process-stack { position: relative; margin-top: 3rem; padding-bottom: 50vh; }
+    .process-card-pin {
+      position: sticky;
+      top: 5rem;
+      margin-bottom: 0;
+      min-height: 75vh;
+      display: flex;
+      align-items: flex-start;
+      padding-top: 1.5rem;
+    }
+    .process-card {
+      display: grid; grid-template-columns: 280px 1fr;
+      background: var(--bg-card); border: 1px solid var(--bdr);
+      border-radius: 16px; overflow: hidden;
+      min-height: calc(75vh - 8rem);
+      align-items: stretch;
+      width: 100%;
+    }
+    .process-card-media {
+      background: linear-gradient(145deg, rgba(13,110,253,.1) 0%, rgba(0,212,255,.05) 100%);
+      display: flex; align-items: center; justify-content: center;
+      padding: 3rem; border-right: 1px solid var(--bdr);
+    }
+    .process-card-big-num {
+      font-size: 7rem; font-weight: 900; letter-spacing: -.06em; line-height: 1;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; opacity: .6;
+    }
+    .process-card-body {
+      padding: 3.5rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .process-step-badge {
+      display: inline-block;
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--primary); margin-bottom: 1.25rem;
+    }
+    .process-step-title { font-size: 1.625rem; font-weight: 700; letter-spacing: -.03em; line-height: 1.25; margin-bottom: 1rem; }
+    .process-step-desc  { font-size: 1rem; line-height: 1.78; color: var(--muted); margin-bottom: 2rem; max-width: 42ch; }
+    .process-deliverables { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; }
+    .process-deliverables li {
+      padding: .25rem .75rem;
+      font-size: .75rem; font-weight: 500; color: var(--muted);
+      border: 1px solid var(--bdr); border-radius: 100px;
+    }
+
+    /* ── RESULTS (bento) ─────────────────────────────── */
+    .results { background: var(--bg); padding: 7rem 2rem; }
+    .bento { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    .b-card { background: var(--bg-card); border: 1px solid var(--bdr); border-radius: 14px; padding: 2rem; }
+    .b-card--span2 { grid-column: span 2; }
+    .b-n {
+      font-size: clamp(2.75rem,5vw,4.25rem); font-weight: 900; letter-spacing: -.05em; line-height: 1;
+      background: linear-gradient(135deg,var(--primary),var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: .5rem;
+    }
+    .b-l { font-size: .875rem; color: var(--muted); line-height: 1.55; }
+    .b-q { font-size: 1.0625rem; line-height: 1.7; font-weight: 500; font-style: italic; }
+    .b-qa { font-size: .8125rem; color: var(--muted); margin-top: 1rem; font-style: normal; }
+
+    /* ── CTA ─────────────────────────────────────────── */
+    .cta { background: var(--bg-2); padding: 7rem 2rem; border-top: 1px solid var(--bdr); }
+    .cta-in { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .cta-label { font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+    .cta-title { max-width: 14ch; margin: 0 0 1.5rem; }
+    .cta-body  { font-size: 1rem; line-height: 1.75; color: var(--muted); max-width: 42ch; }
+    .cta-steps { margin-top: 2rem; }
+    .cta-step  { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--bdr); }
+    .cta-step:first-child { border-top: 1px solid var(--bdr); }
+    .cta-step-lbl { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); flex: 0 0 5.5rem; padding-top: .05rem; }
+    .cta-step-val { font-size: .9375rem; line-height: 1.55; }
+    .cta-action { margin-top: 2.5rem; }
+
+    /* ── Scroll reveal ──────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    .footer { background: #03070E; padding: 2.5rem 2rem; border-top: 1px solid var(--bdr); }
+    .footer-in { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo-t { font-size: 1rem; font-weight: 700; color: #fff; }
+    .footer-links { display: flex; gap: 1.75rem; list-style: none; }
+    .footer-links a { font-size: .875rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: .8125rem; color: var(--faint); }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .process-card { grid-template-columns: 1fr; min-height: auto; }
+      .process-card-body { padding: 2rem; }
+      .process-card-pin { min-height: auto; padding-top: 1rem; margin-bottom: 1.5rem; }
+      .process-card-media { border-right: none; border-bottom: 1px solid var(--bdr); padding: 2rem; min-height: auto; }
+      .process-card-big-num { font-size: 4.5rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .svc-row a { grid-template-columns: 2.5rem 1fr 1.75rem; }
+      .svc-tag, .svc-type { display: none; }
+      .ch-grid { grid-template-columns: 1fr; }
+      .bento { grid-template-columns: 1fr; }
+      .b-card--span2 { grid-column: span 1; }
+      .cta-in { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-in { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      .hero-title .word { opacity: 1; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
+<body>
 
-<body class="bg-white text-gray-900">
+<div class="grain" aria-hidden="true"></div>
 
-  <!-- ─── NAVIGATION ─────────────────────────────────── -->
-  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md"
-          style="background:rgba(8,15,32,0.95);border-bottom:1px solid rgba(255,255,255,0.08);">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="/" class="nav-logo">
+      <svg width="30" height="30" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M18 4C10.8 4 5 9.8 5 17C5 24.2 10.8 30 18 30C25.2 30 31 24.2 31 17"
+              stroke="url(#ng1)" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="18" cy="17" r="4.5" fill="url(#ng1)" opacity=".85"/>
+        <defs>
+          <linearGradient id="ng1" x1="5" y1="4" x2="31" y2="30" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0D6EFD"/><stop offset="1" stop-color="#00D4FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="nav-logo-t">etherGTM</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" class="shiny-cta shiny-cta--sm" target="_blank" rel="noopener">
+      <span>Book a call →</span>
+    </a>
+  </div>
+</nav>
 
-      <a href="#" aria-label="etherGTM home" class="flex items-center flex-shrink-0">
-        <img src="ethergtm-logo.png" alt="etherGTM"
-             style="width:200px;height:auto;border-radius:10px;" />
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg-light" aria-hidden="true"></div>
+  <div class="hero-bg-light-2" aria-hidden="true"></div>
+  <div class="hero-in">
+    <p class="eyebrow">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[01]</span>
+      B2B Lead Generation
+    </p>
+
+    <h1 class="t-xl hero-title">
+      <span class="word" style="--i:0">We</span>
+      <span class="word" style="--i:1">turn</span>
+      <span class="word" style="--i:2">cold</span>
+      <span class="word" style="--i:3">outreach</span>
+      <span class="word" style="--i:4">into</span>
+      <span class="word em" style="--i:5">
+        <i>warm meetings.</i>
+        <svg class="em-line" viewBox="0 0 440 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q90 3 180 9T360 9T437 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h1>
+
+    <p class="hero-sub reveal">
+      etherGTM builds and runs done-for-you outbound programs for B2B companies. We handle targeting, infrastructure, copy, and delivery — your team shows up only to qualified calls.
+    </p>
+
+    <div class="hero-actions reveal reveal-delay-1">
+      <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" class="shiny-cta" target="_blank" rel="noopener">
+        <span>Get started →</span>
       </a>
-
-      <nav class="hidden md:flex items-center gap-7">
-        <a href="#services"  class="nav-link text-sm font-medium text-gray-300">Services</a>
-        <a href="#process"   class="nav-link text-sm font-medium text-gray-300">How It Works</a>
-        <a href="#why-us"    class="nav-link text-sm font-medium text-gray-300">Why etherGTM</a>
-        <a href="/blog/"     class="nav-link text-sm font-medium text-gray-300">Blog</a>
-        <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener"   class="nav-link text-sm font-medium text-gray-300">Contact</a>
-      </nav>
-
-      <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri text-sm px-5 py-2.5">Book a Call</a>
+      <a href="#services" class="btn-g">See what we run</a>
     </div>
-  </header>
 
-
-  <!-- ─── HERO ───────────────────────────────────────── -->
-  <section class="relative overflow-hidden grain" style="background: #080F20; padding: 180px 0 120px;">
-    <!-- Glow orbs -->
-    <div class="orb" style="width:520px;height:520px;top:-120px;left:-80px;background:#1C7EFF;opacity:.12;"></div>
-    <div class="orb" style="width:380px;height:380px;bottom:-100px;right:-60px;background:#00C4FF;opacity:.1;"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 text-center">
-
-      <!-- Eyebrow pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-8"
-           style="background:rgba(28,126,255,.12);border:1px solid rgba(28,126,255,.35);color:#60AAFF;">
-        <span class="w-2 h-2 rounded-full bg-[#00C4FF]" style="animation:pulse 2s infinite;"></span>
-        B2B Lead Generation
+    <div class="hero-stats reveal reveal-delay-2">
+      <div>
+        <div class="h-sn">3–5×</div>
+        <div class="h-sl">reply rate vs. in-house</div>
       </div>
-
-      <h1 class="text-5xl lg:text-[72px] font-extrabold text-white"
-          style="letter-spacing:-0.03em;line-height:1.06;">
-        Turn Cold Outreach Into<br />
-        <span class="grad-text">Warm Revenue</span>
-      </h1>
-
-      <p class="mt-6 text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto" style="line-height:1.75;">
-        etherGTM runs precision email and LinkedIn outbound campaigns that land
-        in the right inbox at the right time — so your sales team can focus on
-        closing, not prospecting.
-      </p>
-
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri w-full sm:w-auto text-base px-8 py-4">
-          Book a Strategy Call
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
-        <a href="#services" class="btn-ghost w-full sm:w-auto text-base px-8 py-4">
-          See Our Services
-        </a>
+      <div>
+        <div class="h-sn">30 days</div>
+        <div class="h-sl">to first booked meeting</div>
       </div>
-
-      <!-- Trust row -->
-      <div class="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-        <span class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.5);">
-          <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          No long-term contracts
-        </span>
-        <span class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.5);">
-          <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          Results in 30 days
-        </span>
-        <span class="flex items-center gap-2 text-sm" style="color:rgba(255,255,255,.5);">
-          <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          100% done-for-you
-        </span>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ─── STATS BAR ──────────────────────────────────── -->
-  <div style="background:#F2F7FF;border-bottom:1px solid #DDE8F8;">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        <div>
-          <p class="stat-num text-4xl font-extrabold grad-text">500+</p>
-          <p class="mt-1 text-sm font-medium text-gray-400">Campaigns Launched</p>
-        </div>
-        <div>
-          <p class="stat-num text-4xl font-extrabold grad-text">3.2M+</p>
-          <p class="mt-1 text-sm font-medium text-gray-400">Emails Delivered</p>
-        </div>
-        <div>
-          <p class="stat-num text-4xl font-extrabold grad-text">8,400+</p>
-          <p class="mt-1 text-sm font-medium text-gray-400">Meetings Booked</p>
-        </div>
-        <div>
-          <p class="stat-num text-4xl font-extrabold grad-text">94%</p>
-          <p class="mt-1 text-sm font-medium text-gray-400">Client Retention</p>
-        </div>
+      <div>
+        <div class="h-sn">100%</div>
+        <div class="h-sl">done for you</div>
       </div>
     </div>
   </div>
+</section>
 
+<!-- ── SERVICES LIST ──────────────────────────────────── -->
+<section class="svc-list" id="services">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--dk">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[02]</span>
+      What we run
+    </p>
+    <h2 class="t-lg reveal" style="color:var(--dark);">
+      Two channels.
+      <span class="em">
+        <i>One pipeline.</i>
+        <svg class="em-line" viewBox="0 0 330 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q70 3 140 9T280 9T327 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h2>
 
-  <!-- ─── SERVICES ───────────────────────────────────── -->
-  <section id="services" class="py-24 lg:py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-
-      <div class="text-center mb-16">
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-              style="background:#EBF3FF;color:#1C7EFF;">Our Services</span>
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900" style="letter-spacing:-0.03em;">
-          Two channels. One pipeline.
-        </h2>
-        <p class="mt-4 text-lg text-gray-400 max-w-lg mx-auto" style="line-height:1.75;">
-          We run both channels in tandem to maximize your reach and conversion
-          across the full outbound funnel.
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-8">
-
-        <!-- Email Outbound card -->
-        <a href="email-outbound.html"
-           class="service-card service-card-light rounded-2xl p-8 lg:p-10 flex flex-col"
-           style="background:linear-gradient(145deg,#FAFBFF,#EEF5FF);border:1.5px solid #DDE8F8;text-decoration:none;cursor:pointer;">
-
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 grad flex-shrink-0">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-          </div>
-
-          <h3 class="text-2xl font-bold text-gray-900 mb-3" style="letter-spacing:-0.02em;">Email Outbound</h3>
-          <p class="text-gray-400 mb-6" style="line-height:1.75;">
-            Hyper-personalized cold email campaigns built on solid infrastructure.
-            From domain warm-up to conversion copywriting — we own every layer.
-          </p>
-
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-3 text-sm text-gray-500">
-              <span class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#E2EEFF;">
-                <svg class="w-3 h-3" style="color:#1C7EFF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+    <ul class="svc-rows">
+      <li class="svc-row">
+        <a href="/email-outbound.html">
+          <span class="svc-num">01</span>
+          <span class="svc-name">
+            <span class="text-roll" aria-label="Email Outbound">
+              <span class="text-roll-row">
+                <span class="text-roll-letter" style="--i:0">E</span><span class="text-roll-letter" style="--i:1">m</span><span class="text-roll-letter" style="--i:2">a</span><span class="text-roll-letter" style="--i:3">i</span><span class="text-roll-letter" style="--i:4">l</span><span class="text-roll-letter" style="--i:5">&nbsp;</span><span class="text-roll-letter" style="--i:6">O</span><span class="text-roll-letter" style="--i:7">u</span><span class="text-roll-letter" style="--i:8">t</span><span class="text-roll-letter" style="--i:9">b</span><span class="text-roll-letter" style="--i:10">o</span><span class="text-roll-letter" style="--i:11">u</span><span class="text-roll-letter" style="--i:12">n</span><span class="text-roll-letter" style="--i:13">d</span>
               </span>
-              ICP research &amp; precision list building
-            </li>
-            <li class="flex items-center gap-3 text-sm text-gray-500">
-              <span class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#E2EEFF;">
-                <svg class="w-3 h-3" style="color:#1C7EFF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span class="text-roll-row text-roll-clone" aria-hidden="true">
+                <span class="text-roll-letter" style="--i:0">E</span><span class="text-roll-letter" style="--i:1">m</span><span class="text-roll-letter" style="--i:2">a</span><span class="text-roll-letter" style="--i:3">i</span><span class="text-roll-letter" style="--i:4">l</span><span class="text-roll-letter" style="--i:5">&nbsp;</span><span class="text-roll-letter" style="--i:6">O</span><span class="text-roll-letter" style="--i:7">u</span><span class="text-roll-letter" style="--i:8">t</span><span class="text-roll-letter" style="--i:9">b</span><span class="text-roll-letter" style="--i:10">o</span><span class="text-roll-letter" style="--i:11">u</span><span class="text-roll-letter" style="--i:12">n</span><span class="text-roll-letter" style="--i:13">d</span>
               </span>
-              Multi-step sequences with smart follow-ups
-            </li>
-            <li class="flex items-center gap-3 text-sm text-gray-500">
-              <span class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#E2EEFF;">
-                <svg class="w-3 h-3" style="color:#1C7EFF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              Domain warm-up &amp; deliverability management
-            </li>
-            <li class="flex items-center gap-3 text-sm text-gray-500">
-              <span class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:#E2EEFF;">
-                <svg class="w-3 h-3" style="color:#1C7EFF;" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              A/B testing &amp; continuous optimization
-            </li>
-          </ul>
-
-          <span class="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white self-start grad"
-                style="transition:opacity 0.2s;">
-            Learn more
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </span>
-        </a>
-
-        <!-- LinkedIn Outbound card -->
-        <a href="linkedin-outbound.html"
-           class="service-card service-card-dark rounded-2xl p-8 lg:p-10 relative overflow-hidden flex flex-col"
-           style="background:linear-gradient(145deg,#0D1830,#091425);text-decoration:none;cursor:pointer;">
-          <div class="orb" style="width:320px;height:320px;top:-80px;right:-80px;background:#1C7EFF;opacity:.1;filter:blur(70px);"></div>
-
-          <div class="relative z-10 flex flex-col flex-1">
-            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0"
-                 style="background:rgba(28,126,255,.15);border:1.5px solid rgba(28,126,255,.3);">
-              <svg class="w-7 h-7" style="color:#60AAFF;" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-            </div>
-
-            <h3 class="text-2xl font-bold text-white mb-3" style="letter-spacing:-0.02em;">LinkedIn Outbound</h3>
-            <p class="text-gray-300 mb-6" style="line-height:1.75;">
-              Strategic LinkedIn prospecting that builds genuine connections.
-              We craft message flows that turn cold profiles into warm pipeline.
-            </p>
-
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-center gap-3 text-sm text-gray-300">
-                <span class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(28,126,255,.2);">
-                  <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                </span>
-                Profile optimization &amp; positioning
-              </li>
-              <li class="flex items-center gap-3 text-sm text-gray-300">
-                <span class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(28,126,255,.2);">
-                  <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                </span>
-                Targeted connection &amp; message sequences
-              </li>
-              <li class="flex items-center gap-3 text-sm text-gray-300">
-                <span class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(28,126,255,.2);">
-                  <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                </span>
-                Reply handling &amp; meeting scheduling
-              </li>
-              <li class="flex items-center gap-3 text-sm text-gray-300">
-                <span class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(28,126,255,.2);">
-                  <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                </span>
-                Weekly performance reporting
-              </li>
-            </ul>
-
-            <span class="mt-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold self-start"
-                  style="background:rgba(28,126,255,.2);border:1.5px solid rgba(28,126,255,.45);color:#7BBEFF;transition:background 0.2s;">
-              Learn more
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </span>
-          </div>
+          </span>
+          <span class="svc-tag">Cold Email · Deliverability</span>
+          <span class="svc-type">B2B · Scale</span>
+          <span class="svc-arr">↗</span>
         </a>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ─── HOW IT WORKS ───────────────────────────────── -->
-  <section id="process" class="py-24 lg:py-32" style="background:#F4F8FF;">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-
-      <div class="text-center mb-16">
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-              style="background:#E2EEFF;color:#1C7EFF;">The Process</span>
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900" style="letter-spacing:-0.03em;">
-          From kickoff to booked meetings<br />in 30 days.
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <div class="bg-white rounded-2xl p-8" style="border:1.5px solid #DDE8F8;box-shadow:0 2px 16px -4px rgba(28,126,255,.06);">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white mb-6 grad">1</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3" style="letter-spacing:-0.02em;">Strategy &amp; Research</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.75;">
-            We deep-dive into your ICP, competitive landscape, and messaging angles
-            to build a targeting strategy grounded in data — not guesswork.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8" style="border:1.5px solid #DDE8F8;box-shadow:0 2px 16px -4px rgba(28,126,255,.06);">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white mb-6 grad">2</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3" style="letter-spacing:-0.02em;">Build &amp; Launch</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.75;">
-            We write the sequences, configure the infrastructure, and launch
-            campaigns across email and LinkedIn simultaneously for maximum coverage.
-          </p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-8" style="border:1.5px solid #DDE8F8;box-shadow:0 2px 16px -4px rgba(28,126,255,.06);">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white mb-6 grad">3</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3" style="letter-spacing:-0.02em;">Optimize &amp; Scale</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.75;">
-            We monitor reply rates, run A/B tests weekly, and iterate on messaging.
-            When something works, we double down and scale it fast.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ─── WHY ETHERGTM ───────────────────────────────── -->
-  <section id="why-us" class="py-24 lg:py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-
-      <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
-
-        <!-- Left copy -->
-        <div>
-          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-6"
-                style="background:#EBF3FF;color:#1C7EFF;">Why etherGTM</span>
-          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6" style="letter-spacing:-0.03em;line-height:1.1;">
-            We're not an agency.<br />We're your outbound team.
-          </h2>
-          <p class="text-lg text-gray-400 mb-8" style="line-height:1.75;">
-            Most agencies hand you templates and disappear. We embed ourselves in
-            your GTM motion, own the results end-to-end, and show up every week
-            with data and a plan.
-          </p>
-          <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri text-sm px-6 py-3">
-            Start generating leads
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-        </div>
-
-        <!-- Right feature grid -->
-        <div class="mt-12 lg:mt-0 grid grid-cols-2 gap-5">
-
-          <div class="why-card p-6 rounded-2xl cursor-default" style="background:#F4F8FF;border:1.5px solid #DDE8F8;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#E2EEFF;">
-              <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-gray-900 mb-1 text-sm">Fast Ramp</h4>
-            <p class="text-xs text-gray-400" style="line-height:1.65;">Live campaigns within 2 weeks of onboarding.</p>
-          </div>
-
-          <div class="why-card p-6 rounded-2xl cursor-default" style="background:#F4F8FF;border:1.5px solid #DDE8F8;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#E2EEFF;">
-              <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-gray-900 mb-1 text-sm">Done-for-You</h4>
-            <p class="text-xs text-gray-400" style="line-height:1.65;">Zero lift from your team. We handle everything.</p>
-          </div>
-
-          <div class="why-card p-6 rounded-2xl cursor-default" style="background:#F4F8FF;border:1.5px solid #DDE8F8;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#E2EEFF;">
-              <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-gray-900 mb-1 text-sm">Data-Driven</h4>
-            <p class="text-xs text-gray-400" style="line-height:1.65;">Every decision backed by live campaign data.</p>
-          </div>
-
-          <div class="why-card p-6 rounded-2xl cursor-default" style="background:#F4F8FF;border:1.5px solid #DDE8F8;">
-            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:#E2EEFF;">
-              <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
-            </div>
-            <h4 class="font-semibold text-gray-900 mb-1 text-sm">Dedicated Team</h4>
-            <p class="text-xs text-gray-400" style="line-height:1.65;">Strategist, copywriter &amp; ops lead on your account.</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ─── CTA / CONTACT ──────────────────────────────── -->
-  <section id="contact" class="relative overflow-hidden grain py-24 lg:py-32" style="background:#080F20;">
-    <div class="orb" style="width:480px;height:480px;top:-100px;left:-80px;background:#1C7EFF;opacity:.1;filter:blur(100px);"></div>
-    <div class="orb" style="width:320px;height:320px;bottom:-80px;right:-60px;background:#00C4FF;opacity:.08;filter:blur(80px);"></div>
-
-    <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-10 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="letter-spacing:-0.03em;">
-        Ready to build your<br />
-        <span class="grad-text">outbound machine?</span>
-      </h2>
-      <p class="text-lg text-gray-300 mb-10" style="line-height:1.75;">
-        Book a free 30-minute strategy call. We'll audit your outbound, map out
-        a custom campaign plan, and show you exactly what to expect.
-      </p>
-
-      <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener"
-         class="btn-pri text-base px-10 py-5">
-        Book My Free Strategy Call
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-      </a>
-      <p class="mt-5 text-sm" style="color:rgba(255,255,255,.35);">
-        Free 30-min call · No commitment
-      </p>
-    </div>
-  </section>
-
-
-  <!-- ─── FOOTER ─────────────────────────────────────── -->
-  <footer style="background:#040B18;border-top:1px solid rgba(255,255,255,.06);">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-
-        <a href="#" class="flex items-center">
-          <img src="ethergtm-logo.png" alt="etherGTM"
-               style="width:180px;height:auto;border-radius:8px;" />
+      </li>
+      <li class="svc-row">
+        <a href="/linkedin-outbound.html">
+          <span class="svc-num">02</span>
+          <span class="svc-name">
+            <span class="text-roll" aria-label="LinkedIn Outbound">
+              <span class="text-roll-row">
+                <span class="text-roll-letter" style="--i:0">L</span><span class="text-roll-letter" style="--i:1">i</span><span class="text-roll-letter" style="--i:2">n</span><span class="text-roll-letter" style="--i:3">k</span><span class="text-roll-letter" style="--i:4">e</span><span class="text-roll-letter" style="--i:5">d</span><span class="text-roll-letter" style="--i:6">I</span><span class="text-roll-letter" style="--i:7">n</span><span class="text-roll-letter" style="--i:8">&nbsp;</span><span class="text-roll-letter" style="--i:9">O</span><span class="text-roll-letter" style="--i:10">u</span><span class="text-roll-letter" style="--i:11">t</span><span class="text-roll-letter" style="--i:12">b</span><span class="text-roll-letter" style="--i:13">o</span><span class="text-roll-letter" style="--i:14">u</span><span class="text-roll-letter" style="--i:15">n</span><span class="text-roll-letter" style="--i:16">d</span>
+              </span>
+              <span class="text-roll-row text-roll-clone" aria-hidden="true">
+                <span class="text-roll-letter" style="--i:0">L</span><span class="text-roll-letter" style="--i:1">i</span><span class="text-roll-letter" style="--i:2">n</span><span class="text-roll-letter" style="--i:3">k</span><span class="text-roll-letter" style="--i:4">e</span><span class="text-roll-letter" style="--i:5">d</span><span class="text-roll-letter" style="--i:6">I</span><span class="text-roll-letter" style="--i:7">n</span><span class="text-roll-letter" style="--i:8">&nbsp;</span><span class="text-roll-letter" style="--i:9">O</span><span class="text-roll-letter" style="--i:10">u</span><span class="text-roll-letter" style="--i:11">t</span><span class="text-roll-letter" style="--i:12">b</span><span class="text-roll-letter" style="--i:13">o</span><span class="text-roll-letter" style="--i:14">u</span><span class="text-roll-letter" style="--i:15">n</span><span class="text-roll-letter" style="--i:16">d</span>
+              </span>
+            </span>
+          </span>
+          <span class="svc-tag">Connections · Sequences</span>
+          <span class="svc-type">B2B · Trust</span>
+          <span class="svc-arr">↗</span>
         </a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-        <div class="flex items-center gap-6 text-sm" style="color:rgba(255,255,255,.4);">
-          <a href="#services"  class="hover:text-white transition-colors">Services</a>
-          <a href="#process"   class="hover:text-white transition-colors">Process</a>
-          <a href="#why-us"    class="hover:text-white transition-colors">Why Us</a>
-          <a href="/blog/"     class="hover:text-white transition-colors">Blog</a>
-          <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener"   class="hover:text-white transition-colors">Contact</a>
+<!-- ── CHANNEL CARDS ──────────────────────────────────── -->
+<section class="channels">
+  <div class="wrap">
+    <p class="eyebrow">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[03]</span>
+      Service detail
+    </p>
+    <h2 class="t-lg reveal">
+      What's included in
+      <span class="em">
+        <i>each program.</i>
+        <svg class="em-line" viewBox="0 0 360 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q75 3 150 9T300 9T357 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h2>
+
+    <div class="ch-grid">
+      <div class="ch-card reveal">
+        <div class="ch-wm">01</div>
+        <div class="ch-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7L12 13 2 7"/>
+          </svg>
         </div>
+        <h3 class="ch-title">
+          <span class="text-roll" aria-label="Email Outbound">
+            <span class="text-roll-row"><span class="text-roll-letter" style="--i:0">E</span><span class="text-roll-letter" style="--i:1">m</span><span class="text-roll-letter" style="--i:2">a</span><span class="text-roll-letter" style="--i:3">i</span><span class="text-roll-letter" style="--i:4">l</span><span class="text-roll-letter" style="--i:5">&nbsp;</span><span class="text-roll-letter" style="--i:6">O</span><span class="text-roll-letter" style="--i:7">u</span><span class="text-roll-letter" style="--i:8">t</span><span class="text-roll-letter" style="--i:9">b</span><span class="text-roll-letter" style="--i:10">o</span><span class="text-roll-letter" style="--i:11">u</span><span class="text-roll-letter" style="--i:12">n</span><span class="text-roll-letter" style="--i:13">d</span></span>
+            <span class="text-roll-row text-roll-clone" aria-hidden="true"><span class="text-roll-letter" style="--i:0">E</span><span class="text-roll-letter" style="--i:1">m</span><span class="text-roll-letter" style="--i:2">a</span><span class="text-roll-letter" style="--i:3">i</span><span class="text-roll-letter" style="--i:4">l</span><span class="text-roll-letter" style="--i:5">&nbsp;</span><span class="text-roll-letter" style="--i:6">O</span><span class="text-roll-letter" style="--i:7">u</span><span class="text-roll-letter" style="--i:8">t</span><span class="text-roll-letter" style="--i:9">b</span><span class="text-roll-letter" style="--i:10">o</span><span class="text-roll-letter" style="--i:11">u</span><span class="text-roll-letter" style="--i:12">n</span><span class="text-roll-letter" style="--i:13">d</span></span>
+          </span>
+        </h3>
+        <p class="ch-desc">We build your cold email engine — dedicated domains, warm-up, targeted lists, and sequences that earn replies from decision-makers.</p>
+        <ul class="ch-feats">
+          <li>Domain setup, DNS authentication &amp; inbox warm-up</li>
+          <li>ICP definition and verified prospect lists</li>
+          <li>Personalized multi-touch email sequences</li>
+          <li>Deliverability monitoring and weekly reporting</li>
+          <li>A/B testing on subject lines and CTAs</li>
+        </ul>
+        <a href="/email-outbound.html" class="ch-link">
+          Full details
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
 
-        <p class="text-xs" style="color:rgba(255,255,255,.25);">© 2025 etherGTM. All rights reserved.</p>
+      <div class="ch-card reveal reveal-delay-1">
+        <div class="ch-wm">02</div>
+        <div class="ch-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 10v7M7 7v.01M12 17v-5M12 10c0-1.5 2.5-2 3.5-.5S17 13 17 13"/>
+          </svg>
+        </div>
+        <h3 class="ch-title">
+          <span class="text-roll" aria-label="LinkedIn Outbound">
+            <span class="text-roll-row"><span class="text-roll-letter" style="--i:0">L</span><span class="text-roll-letter" style="--i:1">i</span><span class="text-roll-letter" style="--i:2">n</span><span class="text-roll-letter" style="--i:3">k</span><span class="text-roll-letter" style="--i:4">e</span><span class="text-roll-letter" style="--i:5">d</span><span class="text-roll-letter" style="--i:6">I</span><span class="text-roll-letter" style="--i:7">n</span><span class="text-roll-letter" style="--i:8">&nbsp;</span><span class="text-roll-letter" style="--i:9">O</span><span class="text-roll-letter" style="--i:10">u</span><span class="text-roll-letter" style="--i:11">t</span><span class="text-roll-letter" style="--i:12">b</span><span class="text-roll-letter" style="--i:13">o</span><span class="text-roll-letter" style="--i:14">u</span><span class="text-roll-letter" style="--i:15">n</span><span class="text-roll-letter" style="--i:16">d</span></span>
+            <span class="text-roll-row text-roll-clone" aria-hidden="true"><span class="text-roll-letter" style="--i:0">L</span><span class="text-roll-letter" style="--i:1">i</span><span class="text-roll-letter" style="--i:2">n</span><span class="text-roll-letter" style="--i:3">k</span><span class="text-roll-letter" style="--i:4">e</span><span class="text-roll-letter" style="--i:5">d</span><span class="text-roll-letter" style="--i:6">I</span><span class="text-roll-letter" style="--i:7">n</span><span class="text-roll-letter" style="--i:8">&nbsp;</span><span class="text-roll-letter" style="--i:9">O</span><span class="text-roll-letter" style="--i:10">u</span><span class="text-roll-letter" style="--i:11">t</span><span class="text-roll-letter" style="--i:12">b</span><span class="text-roll-letter" style="--i:13">o</span><span class="text-roll-letter" style="--i:14">u</span><span class="text-roll-letter" style="--i:15">n</span><span class="text-roll-letter" style="--i:16">d</span></span>
+          </span>
+        </h3>
+        <p class="ch-desc">We optimize your profile, run connection campaigns, and build multi-touch sequences that convert LinkedIn connections into qualified conversations.</p>
+        <ul class="ch-feats">
+          <li>Profile audit and rewrite for conversion</li>
+          <li>Targeted connection request campaigns</li>
+          <li>Multi-touch message sequences post-connect</li>
+          <li>Content strategy to warm your audience</li>
+          <li>CRM handoff and pipeline tracking</li>
+        </ul>
+        <a href="/linkedin-outbound.html" class="ch-link">
+          Full details
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Pulse animation for eyebrow dot -->
-  <style>
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: .5; transform: scale(.85); }
-    }
-  </style>
+<!-- ── PROCESS (sticky stacked cards) ────────────────── -->
+<section class="process-outer" id="process">
+  <div class="wrap" style="padding:0 2rem;">
+    <p class="eyebrow eyebrow--dk">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[04]</span>
+      How it works
+    </p>
+    <h2 class="t-lg" style="color:var(--dark);">
+      From kickoff to
+      <span class="em" style="color:var(--dark);">
+        <i>booked call.</i>
+        <svg class="em-line" viewBox="0 0 255 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q55 3 110 9T215 9T252 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h2>
+  </div>
 
+  <div class="wrap process-section" style="--process-steps:3; padding-left:2rem; padding-right:2rem;">
+    <div class="process-stack">
+
+      <div class="process-card-pin" style="--i:0;z-index:1">
+        <article class="process-card">
+          <div class="process-card-media">
+            <span class="process-card-big-num">01</span>
+          </div>
+          <div class="process-card-body">
+            <span class="process-step-badge">01/03 — Target</span>
+            <h3 class="process-step-title">Define who you're going after</h3>
+            <p class="process-step-desc">We build an ICP you could name by heart — specific verticals, company sizes, titles, and buying triggers. No broad segments, no guessing.</p>
+            <ul class="process-deliverables">
+              <li>ICP Workshop</li><li>Account Targeting</li><li>List Build</li><li>Segment Validation</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="process-card-pin" style="--i:1;z-index:2">
+        <article class="process-card">
+          <div class="process-card-media">
+            <span class="process-card-big-num">02</span>
+          </div>
+          <div class="process-card-body">
+            <span class="process-step-badge">02/03 — Launch</span>
+            <h3 class="process-step-title">Build and send the campaign</h3>
+            <p class="process-step-desc">Infrastructure goes live, sequences run, and we hit the same accounts from email and LinkedIn simultaneously — two angles, one pipeline.</p>
+            <ul class="process-deliverables">
+              <li>Domain Setup</li><li>Sequence Writing</li><li>Deliverability</li><li>Go-Live</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="process-card-pin" style="--i:2;z-index:3">
+        <article class="process-card">
+          <div class="process-card-media">
+            <span class="process-card-big-num">03</span>
+          </div>
+          <div class="process-card-body">
+            <span class="process-step-badge">03/03 — Book</span>
+            <h3 class="process-step-title">Qualified meetings in your calendar</h3>
+            <p class="process-step-desc">Positive replies are hand-qualified before they reach you. We pass only conversations that match your criteria — you focus entirely on closing.</p>
+            <ul class="process-deliverables">
+              <li>Reply Handling</li><li>Qualification</li><li>CRM Handoff</li><li>Weekly Reports</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── RESULTS ────────────────────────────────────────── -->
+<section class="results">
+  <div class="wrap" style="padding:0 2rem;">
+    <p class="eyebrow">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[05]</span>
+      By the numbers
+    </p>
+    <h2 class="t-lg reveal">
+      What a
+      <span class="em">
+        <i>real program</i>
+        <svg class="em-line" viewBox="0 0 270 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q57 3 114 9T228 9T267 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+      delivers.
+    </h2>
+
+    <div class="bento">
+      <div class="b-card reveal">
+        <div class="b-n">5.8%</div>
+        <div class="b-l">Average reply rate on targeted campaigns<br>(vs. 2.1% industry average)</div>
+      </div>
+      <div class="b-card reveal reveal-delay-1">
+        <div class="b-n">30</div>
+        <div class="b-l">Days to first qualified<br>meeting, on average</div>
+      </div>
+      <div class="b-card reveal reveal-delay-2">
+        <div class="b-n">2×</div>
+        <div class="b-l">Channels running<br>simultaneously</div>
+      </div>
+      <div class="b-card b-card--span2 reveal">
+        <p class="b-q">"etherGTM built our outbound motion from scratch — infrastructure, lists, sequences. Within 30 days we had our first qualified meeting. The system runs without us having to manage it."</p>
+        <p class="b-qa">— Early-stage B2B SaaS founder</p>
+      </div>
+      <div class="b-card reveal reveal-delay-1">
+        <div class="b-n">100%</div>
+        <div class="b-l">Done for you — targeting, copy,<br>sending, and qualification</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────── -->
+<section class="cta">
+  <div class="cta-in">
+    <div>
+      <p class="cta-label">
+        <span class="eyebrow-bar" style="display:inline-block;vertical-align:middle;margin-right:10px;"></span>
+        <span class="eyebrow-tag">[06]</span> Get started
+      </p>
+      <h2 class="t-xl cta-title">Let's build your pipeline.</h2>
+      <p class="cta-body">Book a 30-minute strategy call. We'll map your ICP, show you what a 30-day outbound plan looks like, and tell you exactly what to expect.</p>
+    </div>
+    <div>
+      <div class="cta-steps">
+        <div class="cta-step">
+          <span class="cta-step-lbl">Step 1</span>
+          <span class="cta-step-val">30-minute call to map your ICP and goals</span>
+        </div>
+        <div class="cta-step">
+          <span class="cta-step-lbl">Step 2</span>
+          <span class="cta-step-val">We build targeting, infrastructure, and sequences</span>
+        </div>
+        <div class="cta-step">
+          <span class="cta-step-lbl">Step 3</span>
+          <span class="cta-step-val">Outreach goes live — qualified meetings appear</span>
+        </div>
+      </div>
+      <div class="cta-action">
+        <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" class="shiny-cta" target="_blank" rel="noopener" style="font-size:1rem;padding:1rem 2rem;">
+          <span>Book a strategy call →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-in">
+    <a href="/" class="footer-logo">
+      <svg width="26" height="26" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M18 4C10.8 4 5 9.8 5 17C5 24.2 10.8 30 18 30C25.2 30 31 24.2 31 17"
+              stroke="url(#fg1)" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="18" cy="17" r="4.5" fill="url(#fg1)" opacity=".85"/>
+        <defs>
+          <linearGradient id="fg1" x1="5" y1="4" x2="31" y2="30" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0D6EFD"/><stop offset="1" stop-color="#00D4FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="footer-logo-t">etherGTM</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="/email-outbound.html">Email Outbound</a></li>
+      <li><a href="/linkedin-outbound.html">LinkedIn Outbound</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 etherGTM</p>
+  </div>
+</footer>
+
+<script>
+  /* ── Nav scroll state (Wibify pattern) ── */
+  const nav = document.querySelector('.nav');
+  const onScroll = () => nav.classList.toggle('nav--scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ── Staggered IntersectionObserver reveals ── */
+  const io = new IntersectionObserver((entries) => {
+    // Group entries by their parent so siblings stagger together
+    const byParent = new Map();
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const parent = e.target.parentElement;
+      if (!byParent.has(parent)) byParent.set(parent, []);
+      byParent.get(parent).push(e.target);
+    });
+    byParent.forEach((siblings, parent) => {
+      // Find index within all reveal children of that parent for delay calc
+      const allReveal = [...parent.querySelectorAll(':scope > .reveal')];
+      siblings.forEach(el => {
+        const idx = allReveal.indexOf(el);
+        const delay = idx > 0 ? `${idx * 80}ms` : '';
+        if (delay) el.style.transitionDelay = delay;
+        el.classList.add('is-visible');
+        io.unobserve(el);
+        // Trigger SVG underline draw-in on any em-line inside
+        el.querySelectorAll('.em-line').forEach(svg => svg.classList.add('is-drawn'));
+      });
+    });
+    // Also handle non-sibling reveals
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-visible');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Fallback: trigger all remaining after 2 frames (keeps Puppeteer screenshots intact)
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => el.classList.add('is-visible'));
+    document.querySelectorAll('.em-line:not(.is-drawn)').forEach(svg => svg.classList.add('is-drawn'));
+  }));
+</script>
 </body>
 </html>

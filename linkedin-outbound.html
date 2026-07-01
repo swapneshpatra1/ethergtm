@@ -4,648 +4,611 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LinkedIn Outbound — etherGTM</title>
+  <meta name="description" content="Done-for-you LinkedIn outbound for B2B companies. Profile optimization, connection campaigns, and multi-touch sequences that turn connections into conversations." />
 
-  <!-- Google tag (gtag.js) -->
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEJ6CC3HM2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZEJ6CC3HM2');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-ZEJ6CC3HM2')</script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: { 950: '#040B18', 900: '#080F20', 800: '#0D1830', 700: '#112244' },
-            brand: '#1C7EFF',
-            cyan:  '#00C4FF',
-          },
-          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-        }
-      }
-    }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg:      #060E1B;
+      --bg-2:    #0A1628;
+      --bg-card: #0D1A30;
+      --bg-lt:   #F5F8FF;
+      --primary: #0D6EFD;
+      --accent:  #00D4FF;
+      --bdr:     rgba(255,255,255,.08);
+      --bdr-b:   rgba(13,110,253,.2);
+      --text:    #FFFFFF;
+      --muted:   rgba(255,255,255,.5);
+      --faint:   rgba(255,255,255,.2);
+      --dark:    #060E1B;
+      --dk-m:    rgba(6,14,27,.5);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-    .grad      { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%); }
-    .grad-text { background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%);
-                 -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-                 background-clip: text; }
-
-    .grain::after {
-      content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.035;
+    .grain {
+      position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
     }
 
-    .nav-link { position: relative; transition: color 0.2s; }
-    .nav-link::after {
-      content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1.5px;
-      background: linear-gradient(90deg, #1C7EFF, #00C4FF); transition: width 0.25s ease;
-    }
-    .nav-link:hover { color: #1C7EFF; }
-    .nav-link:hover::after { width: 100%; }
+    .t-xl { font-size: clamp(2.8rem,6.5vw,5.5rem); font-weight: 800; line-height: 1.04; letter-spacing: -.04em; }
+    .t-lg { font-size: clamp(2rem,4vw,3.5rem); font-weight: 800; line-height: 1.08; letter-spacing: -.035em; }
+    .wrap { max-width: 1200px; margin: 0 auto; }
 
-    .btn-pri {
-      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-      background: linear-gradient(135deg, #1C7EFF 0%, #00C4FF 100%);
-      color: #fff; font-weight: 600; border-radius: 10px; cursor: pointer;
-      transition: transform 0.2s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease;
-      text-decoration: none;
-    }
-    .btn-pri:hover  { transform: translateY(-2px); box-shadow: 0 12px 36px -4px rgba(28,126,255,.45); }
-    .btn-pri:active { transform: translateY(0); box-shadow: none; }
-    .btn-pri:focus-visible { outline: 2px solid #1C7EFF; outline-offset: 3px; }
+    .em { position: relative; display: inline-block; vertical-align: baseline; }
+    .em i { font-style: italic; }
+    .em-line { position: absolute; left: 0; bottom: -.18em; width: 100%; height: .28em; overflow: visible; pointer-events: none; }
 
-    .btn-ghost {
-      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-      color: rgba(255,255,255,.8); font-weight: 600; border-radius: 10px;
-      border: 1.5px solid rgba(255,255,255,.2); cursor: pointer;
-      transition: background 0.2s, border-color 0.2s, color 0.2s; text-decoration: none;
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.35); color: #fff; }
+    /* Eyebrow */
+    .eyebrow { display: flex; align-items: center; gap: 10px; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.75rem; }
+    .eyebrow-bar { display: block; width: 24px; height: 1.5px; background: var(--primary); flex-shrink: 0; }
+    .eyebrow-tag { color: var(--faint); letter-spacing: .06em; flex-shrink: 0; }
+    .eyebrow--dk { color: var(--dk-m); }
+    .eyebrow--dk .eyebrow-bar { background: var(--primary); }
+    .eyebrow--dk .eyebrow-tag { color: rgba(6,14,27,.3); }
 
-    .deliverable-card {
-      transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.25s ease, background 0.2s;
-    }
-    .deliverable-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px -8px rgba(28,126,255,.14);
-      background: #EBF3FF;
-    }
+    /* Hero word animation */
+    @keyframes word-in { from { opacity: 0; transform: translateY(.6em); } to { opacity: 1; transform: translateY(0); } }
+    .hero-title .word { display: inline-block; opacity: 0; animation: word-in .65s cubic-bezier(.16,1,.3,1) forwards; animation-delay: calc(.05s + var(--i,0) * .07s); }
+    @media (prefers-reduced-motion: reduce) { .hero-title .word { opacity: 1; animation: none; } }
 
-    .step-line { position: relative; }
-    .step-line::before {
-      content: ''; position: absolute; top: 20px; left: 20px; width: 1.5px;
-      height: calc(100% + 24px);
-      background: linear-gradient(to bottom, #1C7EFF, transparent);
-    }
-    .step-line:last-child::before { display: none; }
+    /* Shiny CTA */
+    .shiny-cta { display: inline-flex; align-items: center; gap: 8px; padding: .875rem 1.75rem; font-size: .9375rem; font-weight: 600; color: #fff; background: var(--primary); border-radius: 8px; text-decoration: none; cursor: pointer; border: none; position: relative; overflow: hidden; isolation: isolate; box-shadow: 0 4px 20px rgba(13,110,253,.32); transition: opacity .2s, transform .15s, box-shadow .2s; }
+    .shiny-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 55%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent); transform: skewX(-15deg); animation: shimmer 3.5s ease infinite; }
+    @keyframes shimmer { 0%, 25% { left: -100%; } 100% { left: 160%; } }
+    .shiny-cta:hover { opacity: .92; transform: translateY(-1px); box-shadow: 0 10px 28px rgba(13,110,253,.48); }
+    .shiny-cta:active { transform: translateY(0); }
+    .shiny-cta--sm { padding: .5rem 1.2rem; font-size: .875rem; border-radius: 6px; }
 
-    .compare-row { transition: background 0.2s; }
-    .compare-row:hover { background: #F4F8FF; }
+    .btn-g { display: inline-flex; align-items: center; gap: 6px; padding: .875rem 1.5rem; font-size: .9375rem; font-weight: 500; color: var(--muted); border: 1px solid var(--bdr); border-radius: 8px; text-decoration: none; transition: color .2s, border-color .2s; }
+    .btn-g:hover { color: #fff; border-color: rgba(255,255,255,.22); }
 
-.orb { border-radius: 50%; position: absolute; pointer-events: none; }
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 2rem; background: rgba(6,14,27,.88); backdrop-filter: blur(14px) saturate(1.6); border-bottom: 1px solid var(--bdr); }
+    .nav-in { max-width: 1200px; margin: 0 auto; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo-t { font-size: 1.1rem; font-weight: 700; color: #fff; letter-spacing: -.02em; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: .5; transform: scale(.85); }
-    }
+    /* HERO */
+    .hero { background: var(--bg); padding: 10rem 2rem 7rem; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -25%; left: 50%; transform: translateX(-50%); width: 80%; height: 65%; background: radial-gradient(ellipse at center, rgba(13,110,253,.1) 0%, transparent 68%); pointer-events: none; }
+    .hero-in { max-width: 1200px; margin: 0 auto; position: relative; }
+    .hero-title { max-width: 820px; margin: 0 0 1.75rem; }
+    .hero-sub { font-size: 1.0625rem; line-height: 1.75; color: var(--muted); max-width: 52ch; margin: 0 0 2.5rem; }
+    .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 4.5rem; }
+    .hero-stats { display: flex; gap: 3.5rem; flex-wrap: wrap; padding-top: 3rem; border-top: 1px solid var(--bdr); }
+    .h-sn { font-size: 2.25rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; margin-bottom: .25rem; }
+    .h-sl { font-size: .8125rem; color: var(--muted); }
+
+    /* DELIVERABLES */
+    .deliverables { background: var(--bg-lt); padding: 7rem 2rem; }
+    .deliv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    .deliv-card { padding: 2rem; border-radius: 14px; border: 1px solid rgba(6,14,27,.1); background: #fff; transition: box-shadow .2s, transform .2s; }
+    .deliv-card:hover { box-shadow: 0 8px 32px rgba(13,110,253,.08); transform: translateY(-2px); }
+    .deliv-icon { width: 40px; height: 40px; border-radius: 9px; background: rgba(13,110,253,.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+    .deliv-icon svg { width: 20px; height: 20px; color: var(--primary); }
+    .deliv-h { font-size: 1rem; font-weight: 700; letter-spacing: -.02em; color: var(--dark); margin-bottom: .625rem; }
+    .deliv-b { font-size: .875rem; line-height: 1.65; color: var(--dk-m); }
+
+    /* PROCESS (sticky stacked) */
+    .process-outer { background: var(--bg-2); padding: 7rem 2rem 0; }
+    .process-section { padding-bottom: calc(3rem + var(--process-steps,4) * 6rem); }
+    .process-stack { position: relative; margin-top: 3rem; }
+    .process-card-pin { position: sticky; top: calc(5rem + var(--i,0) * 2rem); margin-bottom: 1.5rem; }
+    .process-card { display: grid; grid-template-columns: 220px 1fr; background: var(--bg-card); border: 1px solid var(--bdr); border-radius: 16px; overflow: hidden; }
+    .process-card-media { background: linear-gradient(145deg, rgba(13,110,253,.1) 0%, rgba(0,212,255,.05) 100%); display: flex; align-items: center; justify-content: center; padding: 2.5rem; border-right: 1px solid var(--bdr); }
+    .process-card-big-num { font-size: 5.5rem; font-weight: 900; letter-spacing: -.06em; line-height: 1; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; opacity: .6; }
+    .process-card-body { padding: 2.5rem; }
+    .process-step-badge { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem; }
+    .process-step-title { font-size: 1.25rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: .75rem; }
+    .process-step-desc { font-size: .9rem; line-height: 1.72; color: var(--muted); margin-bottom: 1.5rem; }
+    .process-deliverables { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; }
+    .process-deliverables li { padding: .25rem .75rem; font-size: .75rem; font-weight: 500; color: var(--muted); border: 1px solid var(--bdr); border-radius: 100px; }
+
+    /* COMPARISON TABLE */
+    .compare { background: var(--bg-lt); padding: 7rem 2rem; }
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 2.5rem; }
+    .compare-table th, .compare-table td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid rgba(6,14,27,.1); font-size: .9375rem; }
+    .compare-table th { font-size: .75rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--dk-m); padding-top: .75rem; padding-bottom: .75rem; }
+    .compare-table td:first-child { color: var(--dk-m); font-weight: 500; width: 30%; }
+    .compare-table td:not(:first-child) { color: var(--dark); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .col-li { background: rgba(13,110,253,.04); }
+
+    /* WHO IT'S FOR */
+    .for-section { background: var(--bg); padding: 7rem 2rem; }
+    .for-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
+    .for-list { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .for-list li { display: flex; align-items: flex-start; gap: .75rem; font-size: .9375rem; color: var(--muted); line-height: 1.55; }
+    .for-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--primary); margin-top: .5em; flex-shrink: 0; }
+
+    /* CTA */
+    .cta { background: var(--bg-2); padding: 7rem 2rem; border-top: 1px solid var(--bdr); }
+    .cta-in { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .cta-body { font-size: 1rem; line-height: 1.75; color: var(--muted); max-width: 42ch; margin-top: 1.5rem; }
+    .cta-steps { margin-top: 2rem; }
+    .cta-step { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--bdr); }
+    .cta-step:first-child { border-top: 1px solid var(--bdr); }
+    .cta-step-lbl { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); flex: 0 0 5.5rem; padding-top: .05rem; }
+    .cta-step-val { font-size: .9375rem; line-height: 1.55; }
+    .cta-action { margin-top: 2.5rem; }
+
+    /* ALSO CONSIDER */
+    .also { background: var(--bg); padding: 5rem 2rem; border-top: 1px solid var(--bdr); }
+    .also-card { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; padding: 2.5rem; border: 1px solid var(--bdr-b); border-radius: 16px; background: var(--bg-card); }
+    .also-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -.025em; margin-bottom: .75rem; }
+    .also-body { font-size: .9375rem; line-height: 1.65; color: var(--muted); }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* FOOTER */
+    .footer { background: #03070E; padding: 2.5rem 2rem; border-top: 1px solid var(--bdr); }
+    .footer-in { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo-t { font-size: 1rem; font-weight: 700; color: #fff; }
+    .footer-links { display: flex; gap: 1.75rem; list-style: none; }
+    .footer-links a { font-size: .875rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: .8125rem; color: var(--faint); }
+
+    @media (max-width: 900px) { .process-card { grid-template-columns: 1fr; } .process-card-media { border-right: none; border-bottom: 1px solid var(--bdr); } .compare-table { font-size: .875rem; } }
+    @media (max-width: 768px) { .nav-links { display: none; } .deliv-grid { grid-template-columns: 1fr; } .for-grid { grid-template-columns: 1fr; } .cta-in { grid-template-columns: 1fr; gap: 3rem; } .also-card { grid-template-columns: 1fr; } .footer-in { flex-direction: column; align-items: flex-start; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } .hero-title .word { opacity: 1; } .reveal { opacity: 1; transform: none; } }
   </style>
 </head>
+<body>
 
-<body class="bg-white text-gray-900">
+<div class="grain" aria-hidden="true"></div>
 
-  <!-- ─── NAV ──────────────────────────────────────── -->
-  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md"
-          style="background:rgba(8,15,32,0.95);border-bottom:1px solid rgba(255,255,255,0.08);">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
-      <a href="index.html" aria-label="etherGTM home" class="flex items-center flex-shrink-0">
-        <img src="ethergtm-logo.png" alt="etherGTM"
-             style="width:200px;height:auto;border-radius:10px;" />
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="/" class="nav-logo">
+      <svg width="30" height="30" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M18 4C10.8 4 5 9.8 5 17C5 24.2 10.8 30 18 30C25.2 30 31 24.2 31 17"
+              stroke="url(#ln1)" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="18" cy="17" r="4.5" fill="url(#ln1)" opacity=".85"/>
+        <defs>
+          <linearGradient id="ln1" x1="5" y1="4" x2="31" y2="30" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0D6EFD"/><stop offset="1" stop-color="#00D4FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="nav-logo-t">etherGTM</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#process">Process</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" class="shiny-cta shiny-cta--sm" target="_blank" rel="noopener">
+      <span>Book a call →</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <p class="eyebrow">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[01]</span>
+      LinkedIn Outbound
+    </p>
+
+    <h1 class="t-xl hero-title">
+      <span class="word" style="--i:0">LinkedIn</span>
+      <span class="word" style="--i:1">outreach</span>
+      <span class="word" style="--i:2">that</span>
+      <span class="word" style="--i:3">builds</span>
+      <span class="word em" style="--i:4">
+        <i>real pipeline.</i>
+        <svg class="em-line" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q63 3 126 9T252 9T297 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h1>
+
+    <p class="hero-sub reveal">
+      We optimize your profile, run targeted connection campaigns, and build multi-touch sequences that turn LinkedIn connections into qualified conversations. Your team shows up to the calls.
+    </p>
+
+    <div class="hero-actions reveal">
+      <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" class="shiny-cta" target="_blank" rel="noopener">
+        <span>Get started →</span>
       </a>
-      <nav class="hidden md:flex items-center gap-7">
-        <a href="index.html#services"  class="nav-link text-sm font-medium text-gray-300">Services</a>
-        <a href="index.html#process"   class="nav-link text-sm font-medium text-gray-300">How It Works</a>
-        <a href="index.html#why-us"    class="nav-link text-sm font-medium text-gray-300">Why etherGTM</a>
-        <a href="/blog/"               class="nav-link text-sm font-medium text-gray-300">Blog</a>
-        <a href="index.html#contact"   class="nav-link text-sm font-medium text-gray-300">Contact</a>
-      </nav>
-      <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri text-sm px-5 py-2.5">Book a Call</a>
+      <a href="/email-outbound.html" class="btn-g">See Email Outbound</a>
     </div>
-  </header>
 
+    <div class="hero-stats reveal">
+      <div>
+        <div class="h-sn">55–68%</div>
+        <div class="h-sl">connection acceptance rate (blank requests)</div>
+      </div>
+      <div>
+        <div class="h-sn">4 touch</div>
+        <div class="h-sl">sequence per connected prospect</div>
+      </div>
+      <div>
+        <div class="h-sn">Day 1</div>
+        <div class="h-sl">campaigns can start same day</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- ─── HERO ─────────────────────────────────────── -->
-  <section class="relative overflow-hidden grain" style="background:#080F20;padding:168px 0 100px;">
-    <div class="orb" style="width:500px;height:500px;top:-150px;right:-100px;background:#1C7EFF;opacity:.12;filter:blur(90px);"></div>
-    <div class="orb" style="width:300px;height:300px;bottom:-80px;left:-60px;background:#00C4FF;opacity:.08;filter:blur(70px);"></div>
+<!-- DELIVERABLES -->
+<section class="deliverables">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--dk">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[02]</span>
+      What's included
+    </p>
+    <h2 class="t-lg" style="color:var(--dark);">
+      Everything to run
+      <span class="em">
+        <i>LinkedIn outbound.</i>
+        <svg class="em-line" viewBox="0 0 380 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q80 3 160 9T320 9T377 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h2>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="max-w-3xl">
-
-        <!-- Breadcrumb -->
-        <div class="flex items-center gap-2 text-sm mb-6" style="color:rgba(255,255,255,.4);">
-          <a href="index.html" class="hover:text-white transition-colors">Home</a>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-          <a href="index.html#services" class="hover:text-white transition-colors">Services</a>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-          <span style="color:rgba(255,255,255,.7);">LinkedIn Outbound</span>
-        </div>
-
-        <!-- Eyebrow -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-6"
-             style="background:rgba(28,126,255,.12);border:1px solid rgba(28,126,255,.35);color:#60AAFF;">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-            <circle cx="4" cy="4" r="2"/>
+    <div class="deliv-grid">
+      <div class="deliv-card reveal">
+        <div class="deliv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
           </svg>
-          LinkedIn Outbound
         </div>
+        <h3 class="deliv-h">Profile Audit &amp; Rewrite</h3>
+        <p class="deliv-b">We rewrite your headline, about section, and featured block around a real value proposition. A prospect checks your profile before deciding whether to reply — it has to convert.</p>
+      </div>
 
-        <h1 class="text-5xl lg:text-[64px] font-extrabold text-white"
-            style="letter-spacing:-0.03em;line-height:1.06;">
-          Turn LinkedIn into<br />
-          <span class="grad-text">a meeting machine.</span>
-        </h1>
-
-        <p class="mt-6 text-lg text-gray-300 max-w-xl" style="line-height:1.75;">
-          We run strategic LinkedIn outbound campaigns that open conversations with
-          the exact decision-makers you want to reach — without spammy blasts or
-          generic connection requests.
-        </p>
-
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri text-base px-8 py-4">
-            Start a Campaign
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#deliverables" class="btn-ghost text-base px-8 py-4">See What's Included</a>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
         </div>
+        <h3 class="deliv-h">Connection Campaigns</h3>
+        <p class="deliv-b">Targeted connection requests sent to your ICP — blank, not pitchy. Blank requests get accepted 55–68% of the time. We handle the targeting and sending volume within LinkedIn's limits.</p>
+      </div>
 
-        <!-- Quick stats -->
-        <div class="mt-14 flex flex-wrap gap-8">
-          <div>
-            <p class="text-3xl font-extrabold grad-text" style="letter-spacing:-0.03em;">35–55%</p>
-            <p class="text-sm mt-0.5" style="color:rgba(255,255,255,.45);">Connection acceptance rate</p>
-          </div>
-          <div>
-            <p class="text-3xl font-extrabold grad-text" style="letter-spacing:-0.03em;">15–25%</p>
-            <p class="text-sm mt-0.5" style="color:rgba(255,255,255,.45);">Message reply rate</p>
-          </div>
-          <div>
-            <p class="text-3xl font-extrabold grad-text" style="letter-spacing:-0.03em;">30 days</p>
-            <p class="text-sm mt-0.5" style="color:rgba(255,255,255,.45);">To first booked meeting</p>
-          </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
         </div>
+        <h3 class="deliv-h">Multi-Touch Sequences</h3>
+        <p class="deliv-b">Four-touch message sequence after each connection: builds context, demonstrates value, asks a specific question, makes a soft ask. Personalization at every step.</p>
+      </div>
+
+      <div class="deliv-card reveal">
+        <div class="deliv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+          </svg>
+        </div>
+        <h3 class="deliv-h">Content Strategy</h3>
+        <p class="deliv-b">We plan content posts that warm up your audience before outreach hits. Prospects who've seen your name twice reply differently than first-touch cold contacts.</p>
+      </div>
+
+      <div class="deliv-card reveal">
+        <div class="deliv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3 class="deliv-h">Acceptance &amp; Reply Monitoring</h3>
+        <p class="deliv-b">We track acceptance rates, reply rates, and conversation quality daily. If something's off, we adjust the message or targeting before it compounds.</p>
+      </div>
+
+      <div class="deliv-card reveal">
+        <div class="deliv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <h3 class="deliv-h">CRM Handoff &amp; Reporting</h3>
+        <p class="deliv-b">Qualified conversations handed off to your CRM with context. Weekly reports on acceptance rate, reply rate, meetings booked, and pipeline created.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- PROCESS (stacked sticky cards) -->
+<section class="process-outer" id="process">
+  <div class="wrap" style="padding:0 2rem;">
+    <p class="eyebrow">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[03]</span>
+      How LinkedIn outbound works
+    </p>
+    <h2 class="t-lg">
+      From profile fix to
+      <span class="em">
+        <i>booked meeting.</i>
+        <svg class="em-line" viewBox="0 0 330 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q69 3 138 9T276 9T327 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h2>
+  </div>
 
-  <!-- ─── OVERVIEW ─────────────────────────────────── -->
-  <section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
+  <div class="wrap process-section" style="--process-steps:4; padding-left:2rem; padding-right:2rem;">
+    <div class="process-stack">
 
-        <div>
-          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-6"
-                style="background:#EBF3FF;color:#1C7EFF;">What It Is</span>
-          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6" style="letter-spacing:-0.03em;line-height:1.1;">
-            Where your buyers already spend their time.
-          </h2>
-          <p class="text-lg text-gray-400 mb-5" style="line-height:1.75;">
-            LinkedIn is where B2B decision-makers share wins, announce promotions, and talk about
-            their problems. That context is pure gold for outbound — if you know how to use it.
-          </p>
-          <p class="text-lg text-gray-400" style="line-height:1.75;">
-            Most LinkedIn outbound fails because it feels like outbound. We make it feel like a
-            natural conversation — researching each prospect, crafting messages that show genuine
-            interest, and following up in a way that builds rapport rather than burning it.
-          </p>
-        </div>
-
-        <!-- Right: who it's for -->
-        <div class="mt-12 lg:mt-0 rounded-2xl p-8" style="background:#F4F8FF;border:1.5px solid #DDE8F8;">
-          <h3 class="text-lg font-bold text-gray-900 mb-6" style="letter-spacing:-0.02em;">Who this is for</h3>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3">
-              <span class="mt-0.5 w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center grad">
-                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              <div>
-                <p class="text-sm font-semibold text-gray-800">B2B companies targeting senior buyers</p>
-                <p class="text-sm text-gray-400 mt-0.5" style="line-height:1.6;">VPs, Directors, and C-suite are most reachable on LinkedIn.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-0.5 w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center grad">
-                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              <div>
-                <p class="text-sm font-semibold text-gray-800">Companies with longer sales cycles</p>
-                <p class="text-sm text-gray-400 mt-0.5" style="line-height:1.6;">LinkedIn warms prospects before email — ideal for complex deals.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-0.5 w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center grad">
-                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              <div>
-                <p class="text-sm font-semibold text-gray-800">Founders building relationships at scale</p>
-                <p class="text-sm text-gray-400 mt-0.5" style="line-height:1.6;">We grow your network and pipeline simultaneously.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-0.5 w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center grad">
-                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              </span>
-              <div>
-                <p class="text-sm font-semibold text-gray-800">Teams with a weak LinkedIn presence</p>
-                <p class="text-sm text-gray-400 mt-0.5" style="line-height:1.6;">We optimize your profile before campaigns go live.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <div class="process-card-pin" style="--i:0;z-index:1">
+        <article class="process-card">
+          <div class="process-card-media"><span class="process-card-big-num">01</span></div>
+          <div class="process-card-body">
+            <span class="process-step-badge">01/04 — Profile</span>
+            <h3 class="process-step-title">Audit &amp; rewrite your profile</h3>
+            <p class="process-step-desc">We rewrite headline, about, and featured section around your value proposition. Every prospect checks the sender's profile before replying — it has to read as credible.</p>
+            <ul class="process-deliverables">
+              <li>Profile Audit</li><li>Headline Rewrite</li><li>Featured Section</li>
+            </ul>
+          </div>
+        </article>
       </div>
+
+      <div class="process-card-pin" style="--i:1;z-index:2">
+        <article class="process-card">
+          <div class="process-card-media"><span class="process-card-big-num">02</span></div>
+          <div class="process-card-body">
+            <span class="process-step-badge">02/04 — Connect</span>
+            <h3 class="process-step-title">Send connection requests to your ICP</h3>
+            <p class="process-step-desc">Blank connection requests sent to a curated list of your ideal accounts. We handle the targeting, daily volume caps, and safe sending within LinkedIn's limits.</p>
+            <ul class="process-deliverables">
+              <li>ICP Targeting</li><li>Connection Campaigns</li><li>Volume Management</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="process-card-pin" style="--i:2;z-index:3">
+        <article class="process-card">
+          <div class="process-card-media"><span class="process-card-big-num">03</span></div>
+          <div class="process-card-body">
+            <span class="process-step-badge">03/04 — Sequence</span>
+            <h3 class="process-step-title">Run a 4-touch message sequence</h3>
+            <p class="process-step-desc">After each connection: build context → demonstrate value → ask a specific question → soft CTA. No pitch in touch one. Personalization in every message.</p>
+            <ul class="process-deliverables">
+              <li>Message Writing</li><li>4-Touch Sequence</li><li>Personalization</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="process-card-pin" style="--i:3;z-index:4">
+        <article class="process-card">
+          <div class="process-card-media"><span class="process-card-big-num">04</span></div>
+          <div class="process-card-body">
+            <span class="process-step-badge">04/04 — Book</span>
+            <h3 class="process-step-title">Qualify replies and book meetings</h3>
+            <p class="process-step-desc">We review every positive reply before it reaches you. Conversations that don't match your criteria get filtered. Qualified ones go straight to your calendar.</p>
+            <ul class="process-deliverables">
+              <li>Reply Handling</li><li>Qualification</li><li>CRM Handoff</li><li>Reporting</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- COMPARISON TABLE -->
+<section class="compare">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--dk">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[04]</span>
+      Channel comparison
+    </p>
+    <h2 class="t-lg" style="color:var(--dark);">
+      Email vs.
+      <span class="em">
+        <i>LinkedIn.</i>
+        <svg class="em-line" viewBox="0 0 175 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q37 3 74 9T148 9T172 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h2>
 
-  <!-- ─── DELIVERABLES ──────────────────────────────── -->
-  <section id="deliverables" class="py-20 lg:py-28" style="background:#F4F8FF;">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <table class="compare-table reveal" style="margin-top:2.5rem;">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Email Outbound</th>
+          <th class="col-li">LinkedIn Outbound</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Setup effort</td>
+          <td>Higher — domain, DNS, 3–4 week warm-up</td>
+          <td class="col-li">Lower — profile rewrite, no DNS work</td>
+        </tr>
+        <tr>
+          <td>Speed to first reply</td>
+          <td>Slower — warm-up delays real volume</td>
+          <td class="col-li">Faster — campaigns can start same day</td>
+        </tr>
+        <tr>
+          <td>Volume capacity</td>
+          <td>High — hundreds of sends per day</td>
+          <td class="col-li">Moderate — LinkedIn limits apply</td>
+        </tr>
+        <tr>
+          <td>Best for</td>
+          <td>Scaling volume once warmed</td>
+          <td class="col-li">Building trust before the pitch</td>
+        </tr>
+        <tr>
+          <td>Trust signal</td>
+          <td>Lower — inbox is crowded</td>
+          <td class="col-li">Higher — social proof visible</td>
+        </tr>
+        <tr>
+          <td>Best paired with</td>
+          <td>LinkedIn (same accounts, two angles)</td>
+          <td class="col-li">Email (same accounts, two angles)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-      <div class="text-center mb-16">
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-              style="background:#E2EEFF;color:#1C7EFF;">What's Included</span>
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900" style="letter-spacing:-0.03em;">
-          Every layer covered.<br />From profile to pipeline.
-        </h2>
-        <p class="mt-4 text-lg text-gray-400 max-w-lg mx-auto" style="line-height:1.75;">
-          We don't just send messages — we build a complete LinkedIn outbound system.
-        </p>
+<!-- WHO IT'S FOR -->
+<section class="for-section">
+  <div class="wrap">
+    <p class="eyebrow">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[05]</span>
+      Who this is for
+    </p>
+    <h2 class="t-lg">
+      Built for B2B companies that
+      <span class="em">
+        <i>sell on trust.</i>
+        <svg class="em-line" viewBox="0 0 250 16" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 11Q53 3 106 9T212 9T247 11"
+                stroke="#0D6EFD" stroke-width="3" fill="none"
+                stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </span>
+    </h2>
+
+    <div class="for-grid">
+      <div>
+        <p style="font-size:1rem;line-height:1.75;color:var(--muted);">LinkedIn outbound works best for companies where the buyer's trust in the sender matters. Professional services, consultancies, agencies, and high-ACV SaaS deals where a single decision-maker needs to believe in you before agreeing to a call.</p>
+        <p style="font-size:1rem;line-height:1.75;color:var(--muted);margin-top:1rem;">We also run LinkedIn alongside email for the same accounts — two touchpoints, one pipeline, better conversion than either channel alone.</p>
       </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <!-- Card 1 -->
-        <div class="deliverable-card bg-white rounded-2xl p-7" style="border:1.5px solid #DDE8F8;">
-          <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:#EBF3FF;">
-            <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Profile Optimization</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.7;">
-            Before a single message goes out, we audit and rewrite your LinkedIn profile —
-            headline, about section, experience, and featured content — so prospects
-            are impressed when they click through.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="deliverable-card bg-white rounded-2xl p-7" style="border:1.5px solid #DDE8F8;">
-          <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:#EBF3FF;">
-            <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Prospect Targeting</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.7;">
-            We build targeted lists using Sales Navigator with filters by title, industry,
-            company size, seniority, and activity signals — then manually review to ensure
-            quality before any outreach begins.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="deliverable-card bg-white rounded-2xl p-7" style="border:1.5px solid #DDE8F8;">
-          <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:#EBF3FF;">
-            <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Connection &amp; Message Sequences</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.7;">
-            We craft personalized connection notes and follow-up message sequences that feel
-            natural, reference relevant context, and guide prospects toward a meeting — without
-            being pushy or robotic.
-          </p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="deliverable-card bg-white rounded-2xl p-7" style="border:1.5px solid #DDE8F8;">
-          <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:#EBF3FF;">
-            <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Reply Handling</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.7;">
-            We manage your LinkedIn inbox and respond to interested prospects on your behalf.
-            When a conversation heats up, we hand it off to you with full context — or book
-            the meeting directly into your calendar.
-          </p>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="deliverable-card bg-white rounded-2xl p-7" style="border:1.5px solid #DDE8F8;">
-          <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:#EBF3FF;">
-            <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Meeting Scheduling</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.7;">
-            Once a prospect expresses interest, we handle the back-and-forth and get the
-            meeting on your calendar. You show up prepared — we send you a brief on each
-            prospect before every call.
-          </p>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="deliverable-card bg-white rounded-2xl p-7" style="border:1.5px solid #DDE8F8;">
-          <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:#EBF3FF;">
-            <svg class="w-5 h-5" style="color:#1C7EFF;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-            </svg>
-          </div>
-          <h3 class="font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Weekly Reporting</h3>
-          <p class="text-sm text-gray-400" style="line-height:1.7;">
-            You get a clean weekly report covering connection rates, message reply rates, meetings
-            booked, and what we're optimizing next. No fluff — just the numbers that matter.
-          </p>
-        </div>
-
-      </div>
+      <ul class="for-list">
+        <li>B2B professional services where credibility closes deals</li>
+        <li>SaaS with long sales cycles and multiple stakeholders</li>
+        <li>Founders who want to build a personal brand while doing outbound</li>
+        <li>Companies that tried email and want a second channel</li>
+        <li>Teams hitting LinkedIn volume ceilings doing it manually</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- ─── PROCESS ───────────────────────────────────── -->
-  <section id="process" class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-start">
-
-        <div class="lg:sticky lg:top-28">
-          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-6"
-                style="background:#EBF3FF;color:#1C7EFF;">The Process</span>
-          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6" style="letter-spacing:-0.03em;line-height:1.1;">
-            How we run your LinkedIn campaign.
-          </h2>
-          <p class="text-lg text-gray-400" style="line-height:1.75;">
-            From profile audit to booked meetings — a systematic approach to LinkedIn
-            outbound that protects your reputation while filling your calendar.
-          </p>
-        </div>
-
-        <div class="mt-12 lg:mt-0 space-y-6">
-
-          <div class="step-line flex gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white grad z-10 relative">1</div>
-            </div>
-            <div class="pb-8">
-              <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Profile Audit &amp; Optimization</h3>
-              <p class="text-sm text-gray-400" style="line-height:1.75;">
-                Before we send a single message, we audit your LinkedIn profile and rewrite it
-                to position you as a credible, value-driven expert in your space. Prospects check
-                your profile before replying — it needs to convert.
-              </p>
-            </div>
-          </div>
-
-          <div class="step-line flex gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white grad z-10 relative">2</div>
-            </div>
-            <div class="pb-8">
-              <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">ICP &amp; Targeting Strategy</h3>
-              <p class="text-sm text-gray-400" style="line-height:1.75;">
-                We define your ideal LinkedIn prospect using a combination of firmographic filters
-                and behavioral signals — recent job changes, post activity, company growth —
-                then build high-quality prospect lists via Sales Navigator.
-              </p>
-            </div>
-          </div>
-
-          <div class="step-line flex gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white grad z-10 relative">3</div>
-            </div>
-            <div class="pb-8">
-              <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Copywriting &amp; Sequence Build</h3>
-              <p class="text-sm text-gray-400" style="line-height:1.75;">
-                We write connection request notes and message sequences tailored to each target
-                segment. Each message is short, relevant, and adds a reason to respond —
-                not another "I'd love to connect" template.
-              </p>
-            </div>
-          </div>
-
-          <div class="step-line flex gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white grad z-10 relative">4</div>
-            </div>
-            <div class="pb-8">
-              <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Campaign Execution &amp; Inbox Management</h3>
-              <p class="text-sm text-gray-400" style="line-height:1.75;">
-                Campaigns run within LinkedIn's safe activity limits. We monitor connection rates
-                and reply rates daily, manage replies in your inbox, and escalate hot leads to
-                your team with full conversation context.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex gap-6">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white grad">5</div>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.01em;">Optimize &amp; Scale</h3>
-              <p class="text-sm text-gray-400" style="line-height:1.75;">
-                We test different message angles, targeting segments, and follow-up timing
-                each week. Winners get scaled, losers get cut. You get a full report every
-                Monday with results and the plan for the week ahead.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ─── OUTCOMES ─────────────────────────────────── -->
-  <section class="py-20 lg:py-28" style="background:#F4F8FF;">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-
-      <div class="text-center mb-14">
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-              style="background:#E2EEFF;color:#1C7EFF;">What to Expect</span>
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900" style="letter-spacing:-0.03em;">
-          Real results on real accounts.
-        </h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
-        <div class="bg-white rounded-2xl p-7 text-center" style="border:1.5px solid #DDE8F8;">
-          <p class="text-4xl font-extrabold grad-text mb-2" style="letter-spacing:-0.03em;">35–55%</p>
-          <p class="text-sm font-semibold text-gray-700 mb-1">Connection Rate</p>
-          <p class="text-xs text-gray-400">vs. typical 15–20%</p>
-        </div>
-        <div class="bg-white rounded-2xl p-7 text-center" style="border:1.5px solid #DDE8F8;">
-          <p class="text-4xl font-extrabold grad-text mb-2" style="letter-spacing:-0.03em;">15–25%</p>
-          <p class="text-sm font-semibold text-gray-700 mb-1">Message Reply Rate</p>
-          <p class="text-xs text-gray-400">among accepted connections</p>
-        </div>
-        <div class="bg-white rounded-2xl p-7 text-center" style="border:1.5px solid #DDE8F8;">
-          <p class="text-4xl font-extrabold grad-text mb-2" style="letter-spacing:-0.03em;">5–10+</p>
-          <p class="text-sm font-semibold text-gray-700 mb-1">Meetings / Month</p>
-          <p class="text-xs text-gray-400">depending on market size</p>
-        </div>
-        <div class="bg-white rounded-2xl p-7 text-center" style="border:1.5px solid #DDE8F8;">
-          <p class="text-4xl font-extrabold grad-text mb-2" style="letter-spacing:-0.03em;">0</p>
-          <p class="text-sm font-semibold text-gray-700 mb-1">Account Bans</p>
-          <p class="text-xs text-gray-400">safe, within-limit activity always</p>
-        </div>
-      </div>
-
-      <p class="text-center text-xs text-gray-400 max-w-lg mx-auto" style="line-height:1.7;">
-        Results vary by industry, ICP, and offer. We'll provide a realistic forecast for your specific market during your strategy call.
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-in">
+    <div>
+      <p class="eyebrow" style="margin-bottom:1.25rem;">
+        <span class="eyebrow-bar"></span>
+        <span class="eyebrow-tag">[06]</span>
+        Get started
       </p>
-
+      <h2 class="t-xl" style="max-width:14ch;">Ready to turn LinkedIn into a pipeline?</h2>
+      <p class="cta-body">Book a 30-minute strategy call. We'll audit your profile, map your ICP, and show you what a 30-day LinkedIn outbound plan looks like.</p>
     </div>
-  </section>
-
-
-  <!-- ─── EMAIL VS LINKEDIN COMPARISON ─────────────── -->
-  <section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10">
-
-      <div class="text-center mb-12">
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
-              style="background:#EBF3FF;color:#1C7EFF;">Channel Comparison</span>
-        <h2 class="text-4xl font-bold text-gray-900" style="letter-spacing:-0.03em;">
-          Email vs. LinkedIn — or both?
-        </h2>
-        <p class="mt-4 text-gray-400 max-w-lg mx-auto" style="line-height:1.75;">
-          Each channel has strengths. Most of our best-performing clients run them together.
-        </p>
-      </div>
-
-      <div class="rounded-2xl overflow-hidden" style="border:1.5px solid #DDE8F8;">
-        <!-- Header -->
-        <div class="grid grid-cols-3 text-sm font-semibold" style="background:#F4F8FF;border-bottom:1.5px solid #DDE8F8;">
-          <div class="p-4 text-gray-500"></div>
-          <div class="p-4 text-center" style="color:#1C7EFF;border-left:1.5px solid #DDE8F8;">Email Outbound</div>
-          <div class="p-4 text-center" style="color:#1C7EFF;border-left:1.5px solid #DDE8F8;">LinkedIn Outbound</div>
+    <div>
+      <div class="cta-steps">
+        <div class="cta-step">
+          <span class="cta-step-lbl">Step 1</span>
+          <span class="cta-step-val">30-minute call — profile audit and ICP mapping</span>
         </div>
-
-        <div class="compare-row grid grid-cols-3 text-sm" style="border-bottom:1px solid #EEF3FB;">
-          <div class="p-4 font-medium text-gray-600">Best for</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">High volume, broad targeting</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">Senior buyers, relationship-led</div>
+        <div class="cta-step">
+          <span class="cta-step-lbl">Step 2</span>
+          <span class="cta-step-val">Profile rewrite, targeting, and sequence writing</span>
         </div>
-        <div class="compare-row grid grid-cols-3 text-sm" style="border-bottom:1px solid #EEF3FB;">
-          <div class="p-4 font-medium text-gray-600">Volume</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">500–2,000/month</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">100–400/month</div>
-        </div>
-        <div class="compare-row grid grid-cols-3 text-sm" style="border-bottom:1px solid #EEF3FB;">
-          <div class="p-4 font-medium text-gray-600">Reply quality</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">Good</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">Very high</div>
-        </div>
-        <div class="compare-row grid grid-cols-3 text-sm" style="border-bottom:1px solid #EEF3FB;">
-          <div class="p-4 font-medium text-gray-600">Speed to results</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">2–4 weeks</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">3–5 weeks</div>
-        </div>
-        <div class="compare-row grid grid-cols-3 text-sm">
-          <div class="p-4 font-medium text-gray-600">Best paired with</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">LinkedIn follow-up</div>
-          <div class="p-4 text-gray-400 text-center" style="border-left:1.5px solid #EEF3FB;">Email nurture</div>
+        <div class="cta-step">
+          <span class="cta-step-lbl">Step 3</span>
+          <span class="cta-step-val">Campaigns go live — qualified conversations appear</span>
         </div>
       </div>
-
-      <p class="mt-6 text-center text-sm text-gray-400" style="line-height:1.7;">
-        Running both channels increases overall meeting conversion by 2–3x.
-        <a href="index.html#contact" class="font-semibold" style="color:#1C7EFF;">Ask us about our combined package →</a>
-      </p>
-
-    </div>
-  </section>
-
-
-  <!-- ─── ALSO CONSIDER ─────────────────────────────── -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6"
-           style="background:linear-gradient(145deg,#F4F8FF,#EBF3FF);border:1.5px solid #DDE8F8;">
-        <div class="flex items-start gap-5">
-          <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center grad">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <div>
-            <p class="text-xs font-semibold uppercase tracking-widest mb-1 text-gray-400">Also Consider</p>
-            <h3 class="text-xl font-bold text-gray-900 mb-2" style="letter-spacing:-0.02em;">Email Outbound</h3>
-            <p class="text-sm text-gray-400" style="line-height:1.7;max-width:480px;">
-              Pair LinkedIn with cold email for maximum coverage. We reach the same ICP
-              across both channels — higher touchpoints, faster pipeline velocity.
-            </p>
-          </div>
-        </div>
-        <a href="email-outbound.html"
-           class="flex-shrink-0 btn-pri text-sm px-6 py-3">
-          See Email Outbound
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      <div class="cta-action">
+        <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" class="shiny-cta" target="_blank" rel="noopener" style="font-size:1rem;padding:1rem 2rem;">
+          <span>Book a strategy call →</span>
         </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- ─── CTA / CONTACT ─────────────────────────────── -->
-  <section id="contact" class="relative overflow-hidden grain py-24 lg:py-32" style="background:#080F20;">
-    <div class="orb" style="width:480px;height:480px;top:-100px;right:-80px;background:#1C7EFF;opacity:.1;filter:blur(100px);"></div>
-    <div class="orb" style="width:320px;height:320px;bottom:-80px;left:-60px;background:#00C4FF;opacity:.08;filter:blur(80px);"></div>
-
-    <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-10 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4" style="letter-spacing:-0.03em;">
-        Ready to start booking<br />
-        <span class="grad-text">LinkedIn meetings?</span>
-      </h2>
-      <p class="text-lg text-gray-300 mb-10" style="line-height:1.75;">
-        Book a free 30-minute strategy call. We'll review your LinkedIn profile, define
-        your ICP, and outline a campaign plan — no strings attached.
+<!-- ALSO CONSIDER -->
+<section class="also">
+  <div class="also-card">
+    <div>
+      <p class="eyebrow" style="margin-bottom:.75rem;">
+        <span class="eyebrow-bar"></span>
+        <span class="eyebrow-tag">[07]</span>
+        Also consider
       </p>
-
-      <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener"
-         class="btn-pri text-base px-10 py-5">
-        Book My Free Strategy Call
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-      </a>
-      <p class="mt-5 text-sm" style="color:rgba(255,255,255,.35);">
-        Free 30-min call · No commitment
-      </p>
+      <h3 class="also-title">Email Outbound</h3>
+      <p class="also-body">Hit the same ICP from email — dedicated domains, verified lists, and multi-touch sequences that land in inboxes. Run alongside LinkedIn for a coordinated two-channel program.</p>
     </div>
-  </section>
+    <a href="/email-outbound.html" class="shiny-cta" style="white-space:nowrap;">
+      <span>See Email Outbound →</span>
+    </a>
+  </div>
+</section>
 
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-in">
+    <a href="/" class="footer-logo">
+      <svg width="26" height="26" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M18 4C10.8 4 5 9.8 5 17C5 24.2 10.8 30 18 30C25.2 30 31 24.2 31 17"
+              stroke="url(#lf1)" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="18" cy="17" r="4.5" fill="url(#lf1)" opacity=".85"/>
+        <defs>
+          <linearGradient id="lf1" x1="5" y1="4" x2="31" y2="30" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0D6EFD"/><stop offset="1" stop-color="#00D4FF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="footer-logo-t">etherGTM</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="/email-outbound.html">Email Outbound</a></li>
+      <li><a href="/linkedin-outbound.html">LinkedIn Outbound</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 etherGTM</p>
+  </div>
+</footer>
 
-  <!-- ─── FOOTER ────────────────────────────────────── -->
-  <footer style="background:#040B18;border-top:1px solid rgba(255,255,255,.06);">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <a href="index.html">
-          <img src="ethergtm-logo.png" alt="etherGTM"
-               style="width:180px;height:auto;border-radius:8px;" />
-        </a>
-        <div class="flex items-center gap-6 text-sm" style="color:rgba(255,255,255,.4);">
-          <a href="index.html#services"      class="hover:text-white transition-colors">Services</a>
-          <a href="email-outbound.html"       class="hover:text-white transition-colors">Email Outbound</a>
-          <a href="linkedin-outbound.html"    class="hover:text-white transition-colors">LinkedIn Outbound</a>
-          <a href="/blog/"                    class="hover:text-white transition-colors">Blog</a>
-          <a href="index.html#contact"       class="hover:text-white transition-colors">Contact</a>
-        </div>
-        <p class="text-xs" style="color:rgba(255,255,255,.25);">© 2025 etherGTM. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => el.classList.add('is-visible'));
+  }));
+</script>
 </body>
 </html>
