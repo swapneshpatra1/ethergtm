@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290">
+  <rect width="800" height="290" fill="#F4F8FF" rx="12"/>
+  <text x="400" y="28" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#5B7390" letter-spacing="2">HEALTHY DOMAIN HEALTH METRICS</text>
+
+  <!-- Metric 1: Bounce Rate -->
+  <rect x="30" y="50" width="226" height="180" rx="10" fill="white" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="31" y="51" width="224" height="34" rx="9" fill="#DCFCE7"/>
+  <rect x="31" y="73" width="224" height="12" fill="#DCFCE7"/>
+  <text x="143" y="73" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#16A34A" letter-spacing="1">BOUNCE RATE</text>
+  <text x="143" y="120" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="42" font-weight="800" fill="#0F2137">&lt;2%</text>
+  <text x="143" y="140" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#16A34A" font-weight="600">✓ Healthy target</text>
+  <!-- Bar -->
+  <rect x="55" y="160" width="176" height="12" rx="6" fill="#F1F5F9"/>
+  <rect x="55" y="160" width="18" height="12" rx="6" fill="#16A34A"/>
+  <text x="143" y="188" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">What it means: list quality</text>
+  <text x="143" y="202" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">and domain verification</text>
+  <rect x="55" y="208" width="176" height="14" rx="5" fill="#FEF2F2"/>
+  <text x="143" y="219" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#DC2626">Above 2%: pause and clean list</text>
+
+  <!-- Metric 2: Spam Complaint Rate -->
+  <rect x="288" y="50" width="226" height="180" rx="10" fill="white" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="289" y="51" width="224" height="34" rx="9" fill="#DCFCE7"/>
+  <rect x="289" y="73" width="224" height="12" fill="#DCFCE7"/>
+  <text x="401" y="73" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#16A34A" letter-spacing="1">SPAM COMPLAINT RATE</text>
+  <text x="401" y="120" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="42" font-weight="800" fill="#0F2137">&lt;0.1%</text>
+  <text x="401" y="140" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#16A34A" font-weight="600">✓ Healthy target</text>
+  <!-- Bar -->
+  <rect x="312" y="160" width="176" height="12" rx="6" fill="#F1F5F9"/>
+  <rect x="312" y="160" width="6" height="12" rx="6" fill="#16A34A"/>
+  <text x="401" y="188" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">What it means: copy relevance</text>
+  <text x="401" y="202" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">and targeting accuracy</text>
+  <rect x="312" y="208" width="176" height="14" rx="5" fill="#FEF2F2"/>
+  <text x="401" y="219" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#DC2626">Above 0.1%: pause domain immediately</text>
+
+  <!-- Metric 3: Reply Rate Trend -->
+  <rect x="546" y="50" width="224" height="180" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="547" y="51" width="222" height="34" rx="9" fill="#EFF6FF"/>
+  <rect x="547" y="73" width="222" height="12" fill="#EFF6FF"/>
+  <text x="658" y="73" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0D6EFD" letter-spacing="1">REPLY RATE TREND</text>
+  <text x="658" y="110" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="32" font-weight="800" fill="#0D6EFD">↑ Trending</text>
+  <text x="658" y="132" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0D6EFD" font-weight="600">Target: 3–8%</text>
+  <!-- Trend line chart -->
+  <polyline points="570,180 600,170 630,165 660,158 690,150 720,144 750,136" fill="none" stroke="#0D6EFD" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="750" cy="136" r="4" fill="#0D6EFD"/>
+  <rect x="570" y="190" x2="750" y2="190"/>
+  <line x1="570" y1="190" x2="750" y2="190" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="658" y="206" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Increasing = deliverability +</text>
+  <text x="658" y="219" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">copy quality improving</text>
+
+  <!-- Warning bar at bottom -->
+  <rect x="30" y="248" width="740" height="30" rx="8" fill="white" stroke="#FCD34D" stroke-width="1"/>
+  <text x="400" y="259" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#D97706">⚠  Deliverability is a leading indicator.</text>
+  <text x="400" y="272" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">By the time open rates drop visibly, the damage happened two weeks earlier. Check these metrics weekly, not monthly.</text>
+</svg>

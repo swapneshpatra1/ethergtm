@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <rect width="800" height="300" fill="#F4F8FF" rx="12"/>
+  <text x="400" y="28" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#5B7390" letter-spacing="2">3-LAYER OUTBOUND GTM MOTION</text>
+  <text x="400" y="44" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">All three layers run simultaneously — not sequentially</text>
+
+  <!-- Layer 1: ICP List Building -->
+  <rect x="30" y="58" width="720" height="62" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="31" y="59" width="718" height="28" rx="9" fill="#EFF6FF"/>
+  <rect x="31" y="75" width="718" height="12" fill="#EFF6FF"/>
+  <rect x="44" y="63" width="80" height="20" rx="4" fill="#0D6EFD"/>
+  <text x="84" y="77" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="white">LAYER 1</text>
+  <text x="155" y="77" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0D6EFD">ICP-Led List Building</text>
+  <text x="44" y="102" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0F2137">Narrow enough that you could name twenty accounts by heart. Not "anyone who could plausibly buy" — that kills reply rates.</text>
+  <text x="660" y="77" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Campaigns &lt;50 recipients</text>
+  <text x="660" y="105" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#0D6EFD">5.8% reply rate</text>
+
+  <!-- Layer 2: Multi-Channel Sequencing -->
+  <rect x="30" y="135" width="720" height="62" rx="10" fill="white" stroke="#A5F3FC" stroke-width="1.5"/>
+  <rect x="31" y="136" width="718" height="28" rx="9" fill="#F0FDFF"/>
+  <rect x="31" y="152" width="718" height="12" fill="#F0FDFF"/>
+  <rect x="44" y="140" width="80" height="20" rx="4" fill="#0891B2"/>
+  <text x="84" y="154" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="white">LAYER 2</text>
+  <text x="155" y="154" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#0891B2">Multi-Channel Sequencing</text>
+  <text x="44" y="179" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0F2137">Email and LinkedIn touching the same account in a coordinated cadence — not two disconnected campaigns running in parallel.</text>
+  <text x="660" y="154" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">vs single-channel</text>
+  <text x="660" y="182" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#0891B2">+40% reply rate</text>
+
+  <!-- Layer 3: Feedback Loop -->
+  <rect x="30" y="212" width="720" height="62" rx="10" fill="white" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="31" y="213" width="718" height="28" rx="9" fill="#F0FDF4"/>
+  <rect x="31" y="229" width="718" height="12" fill="#F0FDF4"/>
+  <rect x="44" y="217" width="80" height="20" rx="4" fill="#16A34A"/>
+  <text x="84" y="231" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="white">LAYER 3</text>
+  <text x="155" y="231" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#16A34A">Feedback Loop → Product &amp; Messaging</text>
+  <text x="44" y="256" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0F2137">The objections outbound surfaces are the most honest market research you'll get. Feed them into content, positioning, and product.</text>
+  <text x="660" y="231" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Each objection →</text>
+  <text x="660" y="259" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#16A34A">next blog post</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <rect width="800" height="300" fill="#F4F8FF" rx="12"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#5B7390" letter-spacing="2">4 METRICS TO TRACK EVERY WEEK</text>
+
+  <!-- Card 1: Reply Rate -->
+  <rect x="40" y="50" width="165" height="150" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="41" y="51" width="163" height="34" rx="9" fill="#EFF6FF"/>
+  <rect x="41" y="72" width="163" height="13" fill="#EFF6FF"/>
+  <text x="122" y="73" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD" letter-spacing="1">REPLY RATE</text>
+  <text x="122" y="115" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="38" font-weight="800" fill="#0D6EFD">3–8%</text>
+  <text x="122" y="142" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Targeting &amp;</text>
+  <text x="122" y="156" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">copy quality</text>
+  <rect x="57" y="170" width="130" height="18" rx="4" fill="#EFF6FF"/>
+  <text x="122" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#0D6EFD" font-weight="600">Below 3%? Fix targeting</text>
+
+  <!-- Card 2: Meeting Rate -->
+  <rect x="220" y="50" width="165" height="150" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="221" y="51" width="163" height="34" rx="9" fill="#EFF6FF"/>
+  <rect x="221" y="72" width="163" height="13" fill="#EFF6FF"/>
+  <text x="302" y="73" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD" letter-spacing="1">MEETING RATE</text>
+  <text x="302" y="115" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="30" font-weight="800" fill="#0D6EFD">30–50%</text>
+  <text x="302" y="134" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#5B7390">of positive replies</text>
+  <text x="302" y="152" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Replies converting</text>
+  <text x="302" y="165" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">to booked calls</text>
+  <rect x="237" y="170" width="130" height="18" rx="4" fill="#EFF6FF"/>
+  <text x="302" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#0D6EFD" font-weight="600">Low? Fix sequence close</text>
+
+  <!-- Card 3: Show Rate -->
+  <rect x="400" y="50" width="165" height="150" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="401" y="51" width="163" height="34" rx="9" fill="#EFF6FF"/>
+  <rect x="401" y="72" width="163" height="13" fill="#EFF6FF"/>
+  <text x="482" y="73" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD" letter-spacing="1">SHOW RATE</text>
+  <text x="482" y="115" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="38" font-weight="800" fill="#16A34A">70%+</text>
+  <text x="482" y="142" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Qualification</text>
+  <text x="482" y="156" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">quality upstream</text>
+  <rect x="417" y="170" width="130" height="18" rx="4" fill="#DCFCE7"/>
+  <text x="482" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#16A34A" font-weight="600">Below 70%? Tighten ICP</text>
+
+  <!-- Card 4: Pipeline Created -->
+  <rect x="580" y="50" width="180" height="150" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="581" y="51" width="178" height="34" rx="9" fill="#EFF6FF"/>
+  <rect x="581" y="72" width="178" height="13" fill="#EFF6FF"/>
+  <text x="670" y="73" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD" letter-spacing="1">PIPELINE CREATED</text>
+  <text x="670" y="108" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="30" font-weight="800" fill="#0F2137">Track $</text>
+  <text x="670" y="128" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#5B7390">not count</text>
+  <text x="670" y="150" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Dollar value of real</text>
+  <text x="670" y="163" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">sales opportunities</text>
+  <rect x="597" y="170" width="146" height="18" rx="4" fill="#EFF6FF"/>
+  <text x="670" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#0D6EFD" font-weight="600">Meeting count is a vanity metric</text>
+
+  <!-- Insight bar -->
+  <rect x="40" y="220" width="720" height="56" rx="8" fill="white" stroke="#DDE8F8" stroke-width="1"/>
+  <text x="400" y="244" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0F2137" font-weight="600">Track these four numbers weekly — not monthly.</text>
+  <text x="400" y="262" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">A deliverability problem that goes unnoticed for a month can cost a quarter's worth of pipeline.</text>
+</svg>

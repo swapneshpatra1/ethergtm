@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340">
+  <rect width="800" height="340" fill="#F4F8FF" rx="12"/>
+  <text x="400" y="28" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#5B7390" letter-spacing="2">LINKEDIN PROFILE OPTIMIZED FOR OUTBOUND</text>
+
+  <!-- Profile card mockup (left side) -->
+  <rect x="30" y="45" width="380" height="258" rx="10" fill="white" stroke="#DDE8F8" stroke-width="1.5"/>
+
+  <!-- Banner area -->
+  <rect x="30" y="45" width="380" height="70" rx="10" fill="#0D6EFD"/>
+  <rect x="30" y="100" width="380" height="15" fill="#0D6EFD"/>
+  <text x="220" y="84" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" font-weight="600">Banner: Reinforce the value proposition visually</text>
+
+  <!-- Profile photo circle -->
+  <circle cx="80" cy="118" r="28" fill="#F1F5F9" stroke="white" stroke-width="3"/>
+  <text x="80" y="123" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="22" fill="#0D6EFD">👤</text>
+
+  <!-- Name & headline -->
+  <text x="120" y="118" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="14" font-weight="800" fill="#0F2137">Alex Chen</text>
+  <rect x="120" y="124" width="272" height="18" rx="4" fill="#EFF6FF"/>
+  <text x="256" y="137" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0D6EFD" font-weight="600">We help Series A SaaS reduce churn 20% in 90 days</text>
+
+  <!-- Divider -->
+  <line x1="44" y1="158" x2="396" y2="158" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- About label -->
+  <text x="44" y="176" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">ABOUT</text>
+  <text x="44" y="192" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">Helping B2B SaaS companies identify &amp; fix the product gaps</text>
+  <text x="44" y="206" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">causing churn — before it shows up in the dashboard.</text>
+
+  <!-- Divider -->
+  <line x1="44" y1="218" x2="396" y2="218" stroke="#F1F5F9" stroke-width="1"/>
+
+  <!-- Featured section -->
+  <text x="44" y="234" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">FEATURED</text>
+  <rect x="44" y="242" width="160" height="42" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="124" y="260" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD">Case Study ↗</text>
+  <text x="124" y="274" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#5B7390">Reduced churn 23% in 60d</text>
+  <rect x="215" y="242" width="160" height="42" rx="6" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="295" y="260" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD">Video: Our Process ▶</text>
+  <text x="295" y="274" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#5B7390">3 min walkthrough</text>
+
+  <!-- Right side: annotation callouts -->
+  <!-- Banner annotation -->
+  <line x1="412" y1="80" x2="450" y2="80" stroke="#DDE8F8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="452" y="60" width="316" height="40" rx="6" fill="white" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="462" y="76" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0D6EFD">Banner:</text>
+  <text x="510" y="76" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Visual reinforcement of the headline</text>
+  <text x="462" y="92" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Not a stock photo — make it say something</text>
+
+  <!-- Headline annotation -->
+  <line x1="412" y1="133" x2="450" y2="133" stroke="#DDE8F8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="452" y="114" width="316" height="40" rx="6" fill="white" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="462" y="130" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0D6EFD">Headline:</text>
+  <text x="519" y="130" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Value prop, not job title</text>
+  <text x="462" y="146" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#DC2626">✕ Not "Co-founder @ Acme" — that says nothing</text>
+
+  <!-- About annotation -->
+  <line x1="412" y1="197" x2="450" y2="197" stroke="#DDE8F8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="452" y="178" width="316" height="40" rx="6" fill="white" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="462" y="194" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0D6EFD">About:</text>
+  <text x="507" y="194" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Who you help and how — in plain language</text>
+  <text x="462" y="210" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">No buzzwords. No "passionate about disrupting..."</text>
+
+  <!-- Featured annotation -->
+  <line x1="412" y1="263" x2="450" y2="263" stroke="#DDE8F8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="452" y="244" width="316" height="40" rx="6" fill="white" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="462" y="260" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0D6EFD">Featured:</text>
+  <text x="520" y="260" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Real proof — case study, testimonial, or video</text>
+  <text x="462" y="276" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Prospects check this before replying to your message</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="320" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Fix the profile before sending a single outreach message — it's the first thing a prospect checks.</text>
+</svg>

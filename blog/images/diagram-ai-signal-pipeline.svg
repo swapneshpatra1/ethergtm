@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <rect width="800" height="300" fill="#F4F8FF" rx="12"/>
+  <text x="400" y="28" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#5B7390" letter-spacing="2">AI RESEARCH PIPELINE FOR B2B OUTBOUND</text>
+
+  <!-- Stage 1: Signal Sources -->
+  <rect x="30" y="48" width="150" height="170" rx="10" fill="white" stroke="#DDE8F8" stroke-width="1.5"/>
+  <rect x="31" y="49" width="148" height="32" rx="9" fill="#F1F5F9"/>
+  <rect x="31" y="69" width="148" height="12" fill="#F1F5F9"/>
+  <text x="105" y="69" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#5B7390" letter-spacing="1">SIGNAL SOURCES</text>
+  <text x="105" y="100" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">📋 Job changes</text>
+  <text x="105" y="118" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">💰 Funding rounds</text>
+  <text x="105" y="136" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">🔗 Tech stack data</text>
+  <text x="105" y="154" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">📢 Hiring signals</text>
+  <text x="105" y="172" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">🌐 News &amp; press</text>
+  <text x="105" y="192" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">📊 Intent data</text>
+  <text x="105" y="208" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#0D6EFD">Daily scraping: 150+ accts</text>
+
+  <!-- Arrow 1 -->
+  <line x1="184" y1="133" x2="212" y2="133" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="212,127 224,133 212,139" fill="#CBD5E1"/>
+
+  <!-- Stage 2: AI Agent -->
+  <rect x="227" y="48" width="170" height="170" rx="10" fill="white" stroke="#BFDBFE" stroke-width="2"/>
+  <rect x="228" y="49" width="168" height="32" rx="9" fill="#EFF6FF"/>
+  <rect x="228" y="69" width="168" height="12" fill="#EFF6FF"/>
+  <text x="312" y="69" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD" letter-spacing="1">AI AGENT LAYER</text>
+  <text x="312" y="100" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137" font-weight="600">Scores against ICP</text>
+  <text x="312" y="118" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Not keyword match —</text>
+  <text x="312" y="132" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">intent + fit ranking</text>
+  <text x="312" y="154" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137" font-weight="600">Filters 150 → 15</text>
+  <text x="312" y="170" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">strongest signal accounts</text>
+  <text x="312" y="192" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#5B7390">surfaced daily</text>
+  <text x="312" y="210" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#0D6EFD" font-weight="600">≈15 min of compute time</text>
+
+  <!-- Arrow 2 -->
+  <line x1="401" y1="133" x2="429" y2="133" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="429,127 441,133 429,139" fill="#CBD5E1"/>
+
+  <!-- Stage 3: Account Brief -->
+  <rect x="444" y="48" width="150" height="170" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="445" y="49" width="148" height="32" rx="9" fill="#EFF6FF"/>
+  <rect x="445" y="69" width="148" height="12" fill="#EFF6FF"/>
+  <text x="519" y="69" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD" letter-spacing="1">ACCOUNT BRIEF</text>
+  <text x="519" y="98" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Structured summary per</text>
+  <text x="519" y="112" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">account, ready for writer:</text>
+  <text x="519" y="134" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">· Why they fit ICP now</text>
+  <text x="519" y="150" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">· What signal triggered it</text>
+  <text x="519" y="166" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">· Relevant context</text>
+  <text x="519" y="182" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">· Suggested hook angle</text>
+  <text x="519" y="207" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#DC2626">Not a finished email</text>
+
+  <!-- Arrow 3 -->
+  <line x1="598" y1="133" x2="626" y2="133" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="626,127 638,133 626,139" fill="#CBD5E1"/>
+
+  <!-- Stage 4: Human Writer + Email -->
+  <rect x="641" y="48" width="130" height="170" rx="10" fill="white" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="642" y="49" width="128" height="32" rx="9" fill="#DCFCE7"/>
+  <rect x="642" y="69" width="128" height="12" fill="#DCFCE7"/>
+  <text x="706" y="69" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A" letter-spacing="1">HUMAN WRITER</text>
+  <text x="706" y="98" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">SDR uses brief as</text>
+  <text x="706" y="112" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">raw material to write</text>
+  <text x="706" y="128" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137" font-weight="600">specific, verifiable</text>
+  <text x="706" y="144" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137" font-weight="600">first-touch emails</text>
+  <text x="706" y="168" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Same 1 hour spent</text>
+  <text x="706" y="182" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">on 15 best accounts</text>
+  <text x="706" y="207" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#16A34A" font-weight="600">not 15 random ones</text>
+
+  <!-- Bottom insight bar -->
+  <rect x="30" y="234" width="740" height="46" rx="8" fill="white" stroke="#DDE8F8" stroke-width="1"/>
+  <text x="400" y="254" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#0F2137">AI compresses research from hours to minutes — the time goes into sharper copy, not more volume.</text>
+  <text x="400" y="270" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Teams that use AI to send more emails see deliverability drop. Teams that use it to write better emails see reply rates climb.</text>
+</svg>

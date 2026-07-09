@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360">
+  <rect width="800" height="360" fill="#F4F8FF" rx="12"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#5B7390" letter-spacing="2">EMAIL INFRASTRUCTURE SETUP</text>
+
+  <!-- Left: Primary domain (protected) -->
+  <rect x="40" y="50" width="210" height="162" rx="10" fill="white" stroke="#FECACA" stroke-width="1.5"/>
+  <rect x="41" y="51" width="208" height="36" rx="9" fill="#FEF2F2"/>
+  <rect x="41" y="74" width="208" height="13" fill="#FEF2F2"/>
+  <text x="145" y="74" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#DC2626" letter-spacing="1.5">PRIMARY DOMAIN</text>
+  <text x="145" y="106" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="22" font-weight="800" fill="#0F2137">acme.com</text>
+  <text x="145" y="130" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#5B7390">Support · Billing · Transactional</text>
+  <rect x="62" y="148" width="166" height="26" rx="6" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="145" y="165" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#DC2626">⛔  Never send cold outbound</text>
+  <text x="145" y="198" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Protects company email reputation</text>
+
+  <!-- Divider arrow -->
+  <line x1="256" y1="131" x2="294" y2="131" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <circle cx="275" cy="131" r="14" fill="white" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="275" y="136" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="800" fill="#DC2626">✕</text>
+
+  <!-- Right: Two sending domains -->
+  <rect x="310" y="50" width="450" height="76" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="311" y="51" width="448" height="32" rx="9" fill="#EFF6FF"/>
+  <rect x="311" y="71" width="448" height="12" fill="#EFF6FF"/>
+  <text x="325" y="71" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0D6EFD" letter-spacing="1.5">SENDING DOMAIN 1</text>
+  <text x="325" y="96" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="19" font-weight="800" fill="#0F2137">tryacme.com</text>
+  <rect x="542" y="83" width="40" height="18" rx="4" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="562" y="96" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A">SPF ✓</text>
+  <rect x="588" y="83" width="46" height="18" rx="4" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="611" y="96" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A">DKIM ✓</text>
+  <rect x="640" y="83" width="58" height="18" rx="4" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="669" y="96" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A">DMARC ✓</text>
+
+  <rect x="310" y="137" width="450" height="76" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="311" y="138" width="448" height="32" rx="9" fill="#EFF6FF"/>
+  <rect x="311" y="158" width="448" height="12" fill="#EFF6FF"/>
+  <text x="325" y="158" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0D6EFD" letter-spacing="1.5">SENDING DOMAIN 2</text>
+  <text x="325" y="183" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="19" font-weight="800" fill="#0F2137">outacme.com</text>
+  <rect x="542" y="170" width="40" height="18" rx="4" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="562" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A">SPF ✓</text>
+  <rect x="588" y="170" width="46" height="18" rx="4" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="611" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A">DKIM ✓</text>
+  <rect x="640" y="170" width="58" height="18" rx="4" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="669" y="183" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A">DMARC ✓</text>
+
+  <!-- Warm-up ramp -->
+  <line x1="40" y1="240" x2="760" y2="240" stroke="#DDE8F8" stroke-width="1"/>
+  <text x="400" y="258" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#0D6EFD" letter-spacing="1">DOMAIN WARM-UP RAMP — build reputation before sending volume</text>
+
+  <!-- Bar chart labels -->
+  <text x="88" y="284" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Week 1</text>
+  <text x="88" y="296" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#2563EB">5/day</text>
+  <rect x="62" y="300" width="52" height="14" rx="3" fill="#BFDBFE"/>
+
+  <text x="202" y="278" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Week 2</text>
+  <text x="202" y="290" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#2563EB">20/day</text>
+  <rect x="176" y="294" width="52" height="20" rx="3" fill="#93C5FD"/>
+
+  <text x="316" y="272" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Week 3</text>
+  <text x="316" y="284" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#1D4ED8">50/day</text>
+  <rect x="290" y="288" width="52" height="26" rx="3" fill="#60A5FA"/>
+
+  <text x="430" y="265" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Week 4</text>
+  <text x="430" y="277" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#1D4ED8">100/day</text>
+  <rect x="404" y="281" width="52" height="33" rx="3" fill="#3B82F6"/>
+
+  <text x="544" y="260" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Week 5+</text>
+  <text x="544" y="272" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="white">200+</text>
+  <rect x="518" y="276" width="52" height="38" rx="3" fill="#1D4ED8"/>
+  <text x="544" y="298" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="white">200+/day</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="314" x2="590" y2="314" stroke="#CBD5E1" stroke-width="1"/>
+
+  <!-- Note -->
+  <text x="620" y="282" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Skip warm-up →</text>
+  <text x="620" y="296" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#DC2626" font-weight="600">domain flagged as spam</text>
+  <text x="620" y="312" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">before week 3 ends</text>
+
+  <!-- Source note -->
+  <text x="400" y="344" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#94A3B8">etherGTM · Cold Email Infrastructure Guide</text>
+</svg>

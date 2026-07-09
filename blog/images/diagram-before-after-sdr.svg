@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 290">
+  <rect width="800" height="290" fill="#F4F8FF" rx="12"/>
+  <text x="400" y="28" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#5B7390" letter-spacing="2">SDR WORKFLOW — BEFORE AND AFTER AI AGENTS</text>
+
+  <!-- BEFORE column -->
+  <rect x="30" y="44" width="350" height="210" rx="10" fill="white" stroke="#FECACA" stroke-width="1.5"/>
+  <rect x="31" y="45" width="348" height="34" rx="9" fill="#FEF2F2"/>
+  <rect x="31" y="67" width="348" height="12" fill="#FEF2F2"/>
+  <text x="205" y="68" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#DC2626" letter-spacing="1">BEFORE</text>
+
+  <!-- Row 1 -->
+  <text x="55" y="100" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">Accounts triaged daily</text>
+  <text x="360" y="100" text-anchor="end" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="800" fill="#DC2626">15</text>
+
+  <!-- Bar for 15 -->
+  <rect x="55" y="106" width="290" height="8" rx="4" fill="#FEF2F2"/>
+  <rect x="55" y="106" width="46" height="8" rx="4" fill="#FECACA"/>
+
+  <text x="55" y="130" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">Time spent on research</text>
+  <text x="360" y="130" text-anchor="end" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="800" fill="#DC2626">3–4 hrs</text>
+  <text x="55" y="148" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Manual browsing: LinkedIn, hiring pages, news</text>
+
+  <text x="55" y="172" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">Time spent on copy</text>
+  <text x="360" y="172" text-anchor="end" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="800" fill="#5B7390">1 hr</text>
+  <text x="55" y="190" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Light personalization across 15 accounts</text>
+
+  <text x="55" y="214" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">Copy quality</text>
+  <rect x="55" y="220" width="160" height="18" rx="5" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="135" y="233" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#DC2626">Generic — easy to spot</text>
+  <text x="55" y="246" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Same template, light edits</text>
+
+  <!-- AFTER column -->
+  <rect x="420" y="44" width="350" height="210" rx="10" fill="white" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="421" y="45" width="348" height="34" rx="9" fill="#DCFCE7"/>
+  <rect x="421" y="67" width="348" height="12" fill="#DCFCE7"/>
+  <text x="595" y="68" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#16A34A" letter-spacing="1">AFTER (with AI Agent)</text>
+
+  <!-- Row 1 -->
+  <text x="445" y="100" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">Accounts triaged daily</text>
+  <text x="752" y="100" text-anchor="end" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="800" fill="#16A34A">150</text>
+
+  <!-- Bar for 150 -->
+  <rect x="445" y="106" width="290" height="8" rx="4" fill="#DCFCE7"/>
+  <rect x="445" y="106" width="258" height="8" rx="4" fill="#86EFAC"/>
+
+  <text x="445" y="130" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">Time spent on research</text>
+  <text x="752" y="130" text-anchor="end" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="800" fill="#16A34A">15 min</text>
+  <text x="445" y="148" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">AI surfaces 15 best-fit accounts with full context</text>
+
+  <text x="445" y="172" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">Time spent on copy</text>
+  <text x="752" y="172" text-anchor="end" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" font-weight="800" fill="#0D6EFD">1 hr</text>
+  <text x="445" y="190" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Sharp, specific copy for 15 best-fit accounts</text>
+
+  <text x="445" y="214" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="#5B7390">Copy quality</text>
+  <rect x="445" y="220" width="200" height="18" rx="5" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="545" y="233" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A">Specific and verifiable — earns replies</text>
+  <text x="445" y="246" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">References real signal — job change, funding, news</text>
+
+  <!-- VS divider in middle -->
+  <circle cx="400" cy="149" r="18" fill="#F1F5F9" stroke="#DDE8F8" stroke-width="1.5"/>
+  <text x="400" y="154" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="800" fill="#5B7390">VS</text>
+
+  <!-- Bottom note -->
+  <rect x="30" y="266" width="740" height="20" rx="6" fill="white" stroke="#DDE8F8" stroke-width="1"/>
+  <text x="400" y="280" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Same 1-hour time budget. Same 15 accounts emailed. Different quality — and that's the only thing that moves reply rates.</text>
+</svg>

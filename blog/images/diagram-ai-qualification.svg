@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <rect width="800" height="300" fill="#F4F8FF" rx="12"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#5B7390" letter-spacing="2">AI LEAD QUALIFICATION PIPELINE</text>
+
+  <!-- Stage 1: Raw leads -->
+  <rect x="30" y="60" width="130" height="130" rx="10" fill="white" stroke="#DDE8F8" stroke-width="1.5"/>
+  <rect x="31" y="61" width="128" height="34" rx="9" fill="#F8FAFC"/>
+  <rect x="31" y="82" width="128" height="13" fill="#F8FAFC"/>
+  <text x="95" y="82" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#5B7390" letter-spacing="1">RAW LEADS</text>
+  <text x="95" y="108" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0F2137">All inbound</text>
+  <text x="95" y="124" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0F2137">form fills &amp;</text>
+  <text x="95" y="140" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0F2137">content downloads</text>
+  <text x="95" y="168" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="26" font-weight="800" fill="#5B7390">100%</text>
+
+  <!-- Arrow 1 -->
+  <line x1="165" y1="125" x2="190" y2="125" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="190,119 202,125 190,131" fill="#CBD5E1"/>
+
+  <!-- Stage 2: AI Scoring -->
+  <rect x="205" y="50" width="170" height="150" rx="10" fill="white" stroke="#BFDBFE" stroke-width="2"/>
+  <rect x="206" y="51" width="168" height="38" rx="9" fill="#EFF6FF"/>
+  <rect x="206" y="77" width="168" height="12" fill="#EFF6FF"/>
+  <text x="290" y="77" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD" letter-spacing="1">AI SCORING LAYER</text>
+  <text x="290" y="104" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Checks each lead against</text>
+  <text x="290" y="118" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">ICP criteria in real-time:</text>
+  <text x="290" y="136" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">· Company size &amp; industry</text>
+  <text x="290" y="150" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">· Job title &amp; seniority</text>
+  <text x="290" y="164" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">· Tech stack signals</text>
+  <text x="290" y="178" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">· Buying intent indicators</text>
+
+  <!-- Arrows from AI: up (qualified) and down (rejected) -->
+  <line x1="378" y1="125" x2="410" y2="125" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="410,119 422,125 410,131" fill="#CBD5E1"/>
+
+  <!-- Stage 3: Two paths -->
+  <!-- Qualified -->
+  <rect x="425" y="60" width="140" height="70" rx="10" fill="white" stroke="#86EFAC" stroke-width="1.5"/>
+  <rect x="426" y="61" width="138" height="30" rx="9" fill="#DCFCE7"/>
+  <rect x="426" y="79" width="138" height="12" fill="#DCFCE7"/>
+  <text x="495" y="79" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#16A34A" letter-spacing="1">QUALIFIED ✓</text>
+  <text x="495" y="100" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">Matches ICP criteria</text>
+  <text x="495" y="116" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="800" fill="#16A34A">~35%</text>
+
+  <!-- Rejected -->
+  <rect x="425" y="150" width="140" height="70" rx="10" fill="white" stroke="#FECACA" stroke-width="1.5"/>
+  <rect x="426" y="151" width="138" height="30" rx="9" fill="#FEF2F2"/>
+  <rect x="426" y="169" width="138" height="12" fill="#FEF2F2"/>
+  <text x="495" y="169" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#DC2626" letter-spacing="1">FILTERED OUT ✕</text>
+  <text x="495" y="190" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#0F2137">Poor ICP fit</text>
+  <text x="495" y="206" text-anchor="middle" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="800" fill="#DC2626">~65%</text>
+
+  <!-- Arrow to CRM -->
+  <line x1="568" y1="95" x2="598" y2="95" stroke="#86EFAC" stroke-width="2"/>
+  <polygon points="598,89 610,95 598,101" fill="#86EFAC"/>
+
+  <!-- Stage 4: CRM -->
+  <rect x="613" y="60" width="150" height="115" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="614" y="61" width="148" height="34" rx="9" fill="#EFF6FF"/>
+  <rect x="614" y="83" width="148" height="12" fill="#EFF6FF"/>
+  <text x="688" y="83" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0D6EFD" letter-spacing="1">ENTERS CRM</text>
+  <text x="688" y="108" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Tagged with source</text>
+  <text x="688" y="122" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Routed to rep</text>
+  <text x="688" y="140" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">Ready to book</text>
+  <text x="688" y="162" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="#0D6EFD">No manual review</text>
+
+  <!-- Key stat bar -->
+  <rect x="30" y="218" width="740" height="52" rx="8" fill="white" stroke="#DDE8F8" stroke-width="1"/>
+  <text x="400" y="239" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#0F2137" font-weight="600">Every unqualified lead that reaches a rep's calendar wastes time — and rep time is the scarcest resource in early-stage sales.</text>
+  <text x="400" y="257" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#5B7390">AI qualification filters before the meeting gets booked, not after the rep has already spent an hour preparing.</text>
+</svg>
