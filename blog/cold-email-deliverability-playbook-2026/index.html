@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -116,12 +116,14 @@
           style="background:rgba(8,15,32,0.95);border-bottom:1px solid rgba(255,255,255,0.08);">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
       <a href="/" aria-label="etherGTM home" class="flex items-center flex-shrink-0">
-        <img src="/ethergtm-logo.png" alt="etherGTM" style="width:160px;height:auto;" />
+        <img src="/ethergtm-logo.png" alt="etherGTM" style="width:200px;height:auto;border-radius:10px;" />
       </a>
       <nav class="hidden md:flex items-center gap-7">
-        <a href="/#services" class="nav-link text-sm font-medium text-gray-300">Services</a>
-        <a href="/#process"  class="nav-link text-sm font-medium text-gray-300">Process</a>
-        <a href="/blog/"     class="nav-link text-sm font-medium text-gray-300">Blog</a>
+        <a href="/index.html#services"  class="nav-link text-sm font-medium text-gray-300">Services</a>
+        <a href="/index.html#process"   class="nav-link text-sm font-medium text-gray-300">How It Works</a>
+        <a href="/index.html#why-us"    class="nav-link text-sm font-medium text-gray-300">Why etherGTM</a>
+        <a href="/blog/" class="nav-link text-sm font-medium text-gray-300">Blog</a>
+        <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="nav-link text-sm font-medium text-gray-300">Contact</a>
       </nav>
       <a href="https://swapnesh2109.typeform.com/to/wWBVVCWz" target="_blank" rel="noopener" class="btn-pri text-sm px-5 py-2.5">Book a Call</a>
     </div>
@@ -163,11 +165,6 @@
         </div>
         <div class="post-body">
           <p>Deliverability isn&#39;t a setting you flip once — it&#39;s a system you maintain for the life of a campaign. Most teams treat it as an afterthought, then wonder why open rates collapse in week three.</p>
-
-<div style="margin:2.5rem 0;border-radius:14px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 8px 32px rgba(0,0,0,.18);">
-  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YjqAaG_EavQ" title="Cold Email Deliverability Playbook 2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block;"></iframe>
-</div>
-
 <h2 id="why-domains-get-burned">Why domains get burned</h2>
 <p>Every cold email domain has a reputation score that ESPs build silently in the background. Three things wreck it fastest: sending volume that ramps too quickly, reply rates that stay flat because the copy isn&#39;t landing, and shared IP pools that get poisoned by someone else&#39;s bad sending habits.</p>
 <p>The fix isn&#39;t &quot;send less.&quot; It&#39;s separating your sending infrastructure from your primary domain entirely, so a deliverability hit never touches the inbox your team actually lives in.</p>
@@ -179,21 +176,11 @@
 <li>Rotating sender identities across a small pool of warmed inboxes</li>
 <li>Weekly spam-placement testing against major providers</li>
 </ul>
-
-<figure style="margin:2.5rem 0;">
-  <img src="/blog/images/diagram-email-infrastructure.svg" alt="Cold email sending infrastructure: dedicated domains with SPF DKIM DMARC and warm-up ramp" style="width:100%;display:block;" loading="lazy" />
-</figure>
-
 <h2 id="what-quothealthyquot-actually-looks-like">What &quot;healthy&quot; actually looks like</h2>
 <p>A domain in good standing should see bounce rates under 2%, spam complaints under 0.1%, and a reply rate that&#39;s trending up, not flat. If any of those three move the wrong way, we pause sending on that domain before it&#39;s permanently damaged — the recovery cost is always higher than the pause cost.</p>
 <blockquote>
 <p>Deliverability is a leading indicator. By the time open rates visibly drop, the damage already happened two weeks earlier.</p>
 </blockquote>
-
-<figure style="margin:2.5rem 0;">
-  <img src="/blog/images/diagram-domain-health.svg" alt="Email domain health metrics: bounce rate under 2%, spam complaint under 0.1%, reply rate trending up" style="width:100%;display:block;" loading="lazy" />
-</figure>
-
 <h2 id="where-most-teams-go-wrong">Where most teams go wrong</h2>
 <p>The single biggest mistake is running outbound through the same domain used for customer support and billing emails. One spam complaint spike and your entire company&#39;s email reputation takes the hit — not just the campaign.</p>
 
@@ -240,18 +227,18 @@
     </div>
   </a>
 
-  <a href="/blog/ai-lead-qualification-before-crm/" class="post-card rounded-2xl overflow-hidden flex flex-col" style="background:#fff;border:1.5px solid #DDE8F8;text-decoration:none;">
+  <a href="/blog/using-claude-for-cold-email/" class="post-card rounded-2xl overflow-hidden flex flex-col" style="background:#fff;border:1.5px solid #DDE8F8;text-decoration:none;">
     <div class="aspect-[16/9] overflow-hidden" style="background:#EEF5FF;">
-      <img src="/blog/images/cover-ai-lead-qualification.svg" alt="Using AI to Qualify Leads Before They Ever Hit Your CRM" class="w-full h-full object-cover" loading="lazy" />
+      <img src="/blog/images/cover-claude-cold-email.svg" alt="How to Use Claude for Cold Email Outreach in 2026" class="w-full h-full object-cover" loading="lazy" />
     </div>
     <div class="p-6 flex flex-col flex-1">
       <div class="mb-3"><span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest" style="background:#EBF3FF;color:#1C7EFF;border:1px solid #DDE8F8;">AI Automation</span></div>
-      <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.02em;line-height:1.35;">Using AI to Qualify Leads Before They Ever Hit Your CRM</h3>
-      <p class="text-sm text-gray-400 mb-4 flex-1" style="line-height:1.7;">Every unqualified lead that reaches a rep's calendar costs more than the meeting it wastes. Here's how we use AI to filter before, not after, the meeting gets booked.</p>
+      <h3 class="text-lg font-bold text-gray-900 mb-2" style="letter-spacing:-0.02em;line-height:1.35;">How to Use Claude for Cold Email Outreach in 2026</h3>
+      <p class="text-sm text-gray-400 mb-4 flex-1" style="line-height:1.7;">Claude won't write your cold emails for you. It will make the person writing them 5× faster — if you build the right prompt workflow. Here's exactly how.</p>
       <div class="flex items-center gap-2 text-xs text-gray-400 mt-auto">
         <span>Swapnesh Patra</span>
         <span>&middot;</span>
-        <span>June 8, 2026</span>
+        <span>July 9, 2026</span>
       </div>
     </div>
   </a>
@@ -273,7 +260,7 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <a href="/" class="flex items-center">
-          <img src="/ethergtm-logo.png" alt="etherGTM" style="width:130px;height:auto;" />
+          <img src="/ethergtm-logo.png" alt="etherGTM" style="width:180px;height:auto;border-radius:8px;" />
         </a>
         <div class="flex items-center gap-6 text-sm" style="color:rgba(255,255,255,.4);">
           <a href="/index.html#services" class="hover:text-white transition-colors">Services</a>
