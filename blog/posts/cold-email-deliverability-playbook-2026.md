@@ -1,9 +1,9 @@
----
+﻿---
 title: "The Cold Email Deliverability Playbook for 2026"
 description: "Why most cold email campaigns die in spam folders, and the exact infrastructure setup we use to keep client domains out of trouble."
 author: "Swapnesh Patra"
 date: "2026-01-12"
-image: "https://placehold.co/1200x630/0D1830/60AAFF?text=Deliverability+Playbook"
+image: "/blog/images/cover-cold-email-deliverability.svg"
 category: "Outbound"
 tags: ["cold-email", "deliverability", "infrastructure"]
 ---

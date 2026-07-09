@@ -1,9 +1,9 @@
----
+﻿---
 title: "Founder-Led Outbound: The Exact Steps to Generate Leads"
 description: "The exact steps to run founder-led outbound: set up cold email and LinkedIn, write sequences that get replies, and book your first meetings."
 author: "Swapnesh Patra"
 date: "2026-06-24"
-image: "https://placehold.co/1200x630/0D1830/60AAFF?text=Founder-Led+Outbound"
+image: "/blog/images/cover-founder-led-outbound.svg"
 category: "Outbound"
 tags: ["outbound", "cold-email", "linkedin", "gtm-strategy"]
 ---

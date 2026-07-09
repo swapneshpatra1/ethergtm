@@ -1,9 +1,9 @@
----
+﻿---
 title: "How AI Agents Are Changing B2B Outbound Prospecting"
 description: "AI didn't replace outbound reps — it replaced the twelve hours a week they used to spend on research. Here's where the leverage actually shows up."
 author: "Swapnesh Patra"
 date: "2026-02-18"
-image: "https://placehold.co/1200x630/0D1830/00C4FF?text=AI+Outbound+Agents"
+image: "/blog/images/cover-ai-agents-outbound.svg"
 category: "AI Automation"
 tags: ["ai", "automation", "personalization"]
 ---

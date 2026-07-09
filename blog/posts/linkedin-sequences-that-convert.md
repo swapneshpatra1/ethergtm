@@ -1,9 +1,9 @@
----
+﻿---
 title: "LinkedIn Outreach Sequences That Convert in 2026"
 description: "Connection request, pitch, follow-up — the sequence everyone runs, and the reason it converts worse every year. Here's what we run instead."
 author: "Swapnesh Patra"
 date: "2026-05-10"
-image: "https://placehold.co/1200x630/0D1830/60AAFF?text=LinkedIn+Sequences"
+image: "/blog/images/cover-linkedin-sequences.svg"
 category: "Outbound"
 tags: ["linkedin", "sequences", "social-selling"]
 ---

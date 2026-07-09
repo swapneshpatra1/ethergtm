@@ -1,9 +1,9 @@
----
+﻿---
 title: "Building a GTM Motion That Doesn't Rely on Inbound"
 description: "Inbound is a great channel until your category gets crowded or your CAC creeps up. Here's how to build a GTM motion that doesn't wait for someone to find you."
 author: "Swapnesh Patra"
 date: "2026-03-05"
-image: "https://placehold.co/1200x630/0D1830/1C7EFF?text=GTM+Without+Inbound"
+image: "/blog/images/cover-gtm-without-inbound.svg"
 category: "GTM"
 tags: ["gtm-strategy", "outbound", "pipeline"]
 ---

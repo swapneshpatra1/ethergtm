@@ -1,9 +1,9 @@
----
+﻿---
 title: "RevOps Metrics That Actually Predict Pipeline Health"
 description: "Meetings booked is a vanity metric if nothing downstream is tracked. Here are the RevOps metrics that tell you whether outbound is actually working."
 author: "Swapnesh Patra"
 date: "2026-04-02"
-image: "https://placehold.co/1200x630/0D1830/7BBEFF?text=RevOps+Metrics"
+image: "/blog/images/cover-revops-metrics.svg"
 category: "RevOps"
 tags: ["revops", "metrics", "forecasting"]
 ---

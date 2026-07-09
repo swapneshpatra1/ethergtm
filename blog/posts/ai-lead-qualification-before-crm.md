@@ -1,9 +1,9 @@
----
+﻿---
 title: "Using AI to Qualify Leads Before They Ever Hit Your CRM"
 description: "Every unqualified lead that reaches a rep's calendar costs more than the meeting it wastes. Here's how we use AI to filter before, not after, the meeting gets booked."
 author: "Swapnesh Patra"
 date: "2026-06-08"
-image: "https://placehold.co/1200x630/0D1830/00C4FF?text=AI+Lead+Qualification"
+image: "/blog/images/cover-ai-lead-qualification.svg"
 category: "AI Automation"
 tags: ["ai", "lead-qualification", "automation"]
 ---
