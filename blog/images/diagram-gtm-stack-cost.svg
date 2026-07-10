@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="700" height="300" fill="#F4F8FF" rx="12"/>
+  <text x="350" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="#64748B" letter-spacing="0.5">MONTHLY STACK COST BY STAGE</text>
+  <line x1="80" y1="50" x2="80" y2="240" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="80" y1="240" x2="660" y2="240" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="80" y1="190" x2="660" y2="190" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="80" y1="140" x2="660" y2="140" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="80" y1="90" x2="660" y2="90" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="68" y="244" text-anchor="end" font-size="11" fill="#94A3B8">$0</text>
+  <text x="68" y="194" text-anchor="end" font-size="11" fill="#94A3B8">$2k</text>
+  <text x="68" y="144" text-anchor="end" font-size="11" fill="#94A3B8">$4k</text>
+  <text x="68" y="94" text-anchor="end" font-size="11" fill="#94A3B8">$6k</text>
+  <rect x="130" y="200" width="120" height="40" rx="6" fill="#94A3B8"/>
+  <text x="190" y="188" text-anchor="middle" font-size="13" font-weight="800" fill="#475569">~$350</text>
+  <text x="190" y="172" text-anchor="middle" font-size="10" fill="#94A3B8">per month</text>
+  <text x="190" y="260" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">Stage 1</text>
+  <text x="190" y="276" text-anchor="middle" font-size="11" fill="#94A3B8">Motion Validation</text>
+  <rect x="290" y="125" width="120" height="115" rx="6" fill="#3B82F6"/>
+  <text x="350" y="113" text-anchor="middle" font-size="13" font-weight="800" fill="#1E40AF">~$1,700</text>
+  <text x="350" y="97" text-anchor="middle" font-size="10" fill="#94A3B8">per month</text>
+  <text x="350" y="260" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">Stage 2</text>
+  <text x="350" y="276" text-anchor="middle" font-size="11" fill="#94A3B8">Motion Scaling</text>
+  <rect x="450" y="50" width="120" height="190" rx="6" fill="#6366F1"/>
+  <text x="510" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="#3730A3">$3k–$8k+</text>
+  <text x="510" y="22" text-anchor="middle" font-size="10" fill="#94A3B8">per month</text>
+  <text x="510" y="260" text-anchor="middle" font-size="13" font-weight="700" fill="#475569">Stage 3</text>
+  <text x="510" y="276" text-anchor="middle" font-size="11" fill="#94A3B8">Revenue Platform</text>
+</svg>

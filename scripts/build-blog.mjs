@@ -457,7 +457,7 @@ async function build() {
   const blogEntries = await readdir(BLOG_DIR, { withFileTypes: true });
   for (const entry of blogEntries) {
     if (!entry.isDirectory()) continue;
-    if (['posts', 'category', 'tag', 'author'].includes(entry.name)) continue;
+    if (['posts', 'category', 'tag', 'author', 'images'].includes(entry.name)) continue;
     if (!posts.find(p => p.slug === entry.name)) {
       await rm(join(BLOG_DIR, entry.name), { recursive: true, force: true });
     }

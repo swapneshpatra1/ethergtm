@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="900" height="340" fill="#F4F8FF" rx="12"/>
+  <text x="450" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#64748B" letter-spacing="0.5">THE 6 GTM STACK CATEGORIES</text>
+  <rect x="32" y="56" width="262" height="118" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="32" y="56" width="262" height="4" rx="4" fill="#3B82F6"/>
+  <text x="44" y="84" font-size="20">📋</text>
+  <text x="72" y="84" font-size="14" font-weight="700" fill="#1E293B">Data / List Building</text>
+  <text x="44" y="104" font-size="12" fill="#64748B">Find and verify ICP accounts</text>
+  <text x="44" y="122" font-size="11" fill="#94A3B8">S1: Apollo free</text>
+  <text x="44" y="140" font-size="11" fill="#94A3B8">S2: Apollo + Clay</text>
+  <text x="44" y="158" font-size="11" fill="#94A3B8">S3: Clay + custom providers</text>
+  <rect x="320" y="56" width="262" height="118" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="320" y="56" width="262" height="4" rx="4" fill="#0EA5E9"/>
+  <text x="332" y="84" font-size="20">📧</text>
+  <text x="360" y="84" font-size="14" font-weight="700" fill="#1E293B">Sequencing / Outreach</text>
+  <text x="332" y="104" font-size="12" fill="#64748B">Automate multi-touch cadences</text>
+  <text x="332" y="122" font-size="11" fill="#94A3B8">S1: Instantly / Smartlead</text>
+  <text x="332" y="140" font-size="11" fill="#94A3B8">S2: Instantly + LinkedIn tool</text>
+  <text x="332" y="158" font-size="11" fill="#94A3B8">S3: Outreach / Salesloft</text>
+  <rect x="608" y="56" width="262" height="118" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="608" y="56" width="262" height="4" rx="4" fill="#F59E0B"/>
+  <text x="620" y="84" font-size="20">📁</text>
+  <text x="648" y="84" font-size="14" font-weight="700" fill="#1E293B">CRM / Deal Tracking</text>
+  <text x="620" y="104" font-size="12" fill="#64748B">Track pipeline and deals</text>
+  <text x="620" y="122" font-size="11" fill="#94A3B8">S1: HubSpot free / Notion</text>
+  <text x="620" y="140" font-size="11" fill="#94A3B8">S2: HubSpot Starter</text>
+  <text x="620" y="158" font-size="11" fill="#94A3B8">S3: HubSpot Pro / Salesforce</text>
+  <rect x="32" y="196" width="262" height="118" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="32" y="196" width="262" height="4" rx="4" fill="#8B5CF6"/>
+  <text x="44" y="224" font-size="20">🤖</text>
+  <text x="72" y="224" font-size="14" font-weight="700" fill="#1E293B">AI Research Layer</text>
+  <text x="44" y="244" font-size="12" fill="#64748B">Build account context at scale</text>
+  <text x="44" y="262" font-size="11" fill="#94A3B8">S1: Manual / ChatGPT</text>
+  <text x="44" y="280" font-size="11" fill="#94A3B8">S2: Clay AI columns + Claude</text>
+  <text x="44" y="298" font-size="11" fill="#94A3B8">S3: Full AI research pipeline</text>
+  <rect x="320" y="196" width="262" height="118" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="320" y="196" width="262" height="4" rx="4" fill="#0077B5"/>
+  <text x="332" y="224" font-size="20">🔗</text>
+  <text x="360" y="224" font-size="14" font-weight="700" fill="#1E293B">LinkedIn Automation</text>
+  <text x="332" y="244" font-size="12" fill="#64748B">Coordinate LinkedIn with email</text>
+  <text x="332" y="262" font-size="11" fill="#94A3B8">S1: Manual outreach</text>
+  <text x="332" y="280" font-size="11" fill="#94A3B8">S2: Heyreach / Expandi</text>
+  <text x="332" y="298" font-size="11" fill="#94A3B8">S3: Heyreach + workflows</text>
+  <rect x="608" y="196" width="262" height="118" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="608" y="196" width="262" height="4" rx="4" fill="#10B981"/>
+  <text x="620" y="224" font-size="20">🛡️</text>
+  <text x="648" y="224" font-size="14" font-weight="700" fill="#1E293B">Email Infrastructure</text>
+  <text x="620" y="244" font-size="12" fill="#64748B">Deliverability, warm-up, domains</text>
+  <text x="620" y="262" font-size="11" fill="#94A3B8">S1: Built-in warm-up</text>
+  <text x="620" y="280" font-size="11" fill="#94A3B8">S2: Multiple sending domains</text>
+  <text x="620" y="298" font-size="11" fill="#94A3B8">S3: Dedicated infra team</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="900" height="320" fill="#F4F8FF" rx="12"/>
+  <line x1="268" y1="110" x2="332" y2="110" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="568" y1="110" x2="632" y2="110" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="4,3"/>
+  <rect x="40" y="54" width="228" height="210" rx="10" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="40" y="54" width="228" height="6" rx="10" fill="#94A3B8"/>
+  <text x="154" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1">STAGE 1</text>
+  <text x="154" y="114" text-anchor="middle" font-size="17" font-weight="800" fill="#1E293B">Motion Validation</text>
+  <text x="154" y="136" text-anchor="middle" font-size="12" fill="#64748B">Pre-PMF → $500k ARR</text>
+  <line x1="64" y1="150" x2="244" y2="150" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="64" y="172" font-size="12" fill="#475569">📋  Apollo / Clay</text>
+  <text x="64" y="194" font-size="12" fill="#475569">📧  Instantly / Smartlead</text>
+  <text x="64" y="216" font-size="12" fill="#475569">📁  HubSpot Free</text>
+  <text x="64" y="238" font-size="12" fill="#475569">👤  LinkedIn (manual)</text>
+  <rect x="64" y="250" width="160" height="24" rx="5" fill="#F1F5F9"/>
+  <text x="144" y="267" text-anchor="middle" font-size="11" font-weight="700" fill="#94A3B8">~$200–$500 / mo</text>
+  <rect x="340" y="30" width="228" height="234" rx="10" fill="white" stroke="#BFDBFE" stroke-width="1.5"/>
+  <rect x="340" y="30" width="228" height="6" rx="10" fill="#3B82F6"/>
+  <text x="454" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="#3B82F6" letter-spacing="1">STAGE 2</text>
+  <text x="454" y="90" text-anchor="middle" font-size="17" font-weight="800" fill="#1E293B">Motion Scaling</text>
+  <text x="454" y="112" text-anchor="middle" font-size="12" fill="#64748B">$500k – $2M ARR</text>
+  <line x1="364" y1="126" x2="544" y2="126" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="364" y="148" font-size="12" fill="#475569">📋  Apollo + Clay</text>
+  <text x="364" y="170" font-size="12" fill="#475569">📧  Instantly + LinkedIn tool</text>
+  <text x="364" y="192" font-size="12" fill="#475569">📁  HubSpot Starter</text>
+  <text x="364" y="214" font-size="12" fill="#475569">🤖  Clay AI + Claude</text>
+  <text x="364" y="236" font-size="12" fill="#475569">🔗  Heyreach / Expandi</text>
+  <rect x="364" y="248" width="160" height="24" rx="5" fill="#EFF6FF"/>
+  <text x="444" y="265" text-anchor="middle" font-size="11" font-weight="700" fill="#3B82F6">~$1,000–$2,500 / mo</text>
+  <rect x="640" y="10" width="228" height="254" rx="10" fill="white" stroke="#A5B4FC" stroke-width="1.5"/>
+  <rect x="640" y="10" width="228" height="6" rx="10" fill="#6366F1"/>
+  <text x="754" y="44" text-anchor="middle" font-size="11" font-weight="700" fill="#6366F1" letter-spacing="1">STAGE 3</text>
+  <text x="754" y="70" text-anchor="middle" font-size="17" font-weight="800" fill="#1E293B">Revenue Platform</text>
+  <text x="754" y="92" text-anchor="middle" font-size="12" fill="#64748B">$2M ARR+</text>
+  <line x1="664" y1="106" x2="844" y2="106" stroke="#F1F5F9" stroke-width="1"/>
+  <text x="664" y="128" font-size="12" fill="#475569">📋  Clay + data providers</text>
+  <text x="664" y="150" font-size="12" fill="#475569">📧  Outreach / Salesloft</text>
+  <text x="664" y="172" font-size="12" fill="#475569">📁  HubSpot Pro / Salesforce</text>
+  <text x="664" y="194" font-size="12" fill="#475569">🤖  Full AI pipeline</text>
+  <text x="664" y="216" font-size="12" fill="#475569">🔗  Heyreach + workflows</text>
+  <text x="664" y="238" font-size="12" fill="#475569">📡  Signals (Unify / Keyplay)</text>
+  <rect x="664" y="250" width="160" height="24" rx="5" fill="#EEF2FF"/>
+  <text x="744" y="267" text-anchor="middle" font-size="11" font-weight="700" fill="#6366F1">~$3,000–$8,000+ / mo</text>
+</svg>
