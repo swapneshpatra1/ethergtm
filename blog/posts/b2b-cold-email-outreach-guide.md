@@ -3,7 +3,7 @@ title: "B2B Cold Email Outreach: The Complete Guide for 2026"
 description: "Cold email's average reply rate dropped to 3.43% in 2026. Here's the complete system — targeting, infrastructure, copy, sequences, and reply handling — to consistently hit 5–10%."
 author: "Swapnesh Patra"
 date: "2026-07-24"
-image: "https://placehold.co/1200x630/0D1830/60AAFF?text=B2B+Cold+Email+Outreach+Guide+2026"
+image: "/blog/images/cover-b2b-cold-email-outreach-guide.svg"
 category: "Outbound"
 tags: ["cold-email", "outbound", "personalization", "sequences", "deliverability"]
 ---
