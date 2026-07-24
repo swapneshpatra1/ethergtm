@@ -267,6 +267,8 @@ function page({ title, description, canonical, schema, bodyHtml }) {
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
   <link rel="canonical" href="${canonical}" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/ethergtm-logo.png">
   <link rel="alternate" type="application/rss+xml" title="${SITE_NAME} Blog" href="${SITE_URL}/rss.xml" />
 ${renderGtag()}
 ${HEAD_ASSETS}
