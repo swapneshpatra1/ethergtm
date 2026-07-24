@@ -5,12 +5,12 @@
       <stop offset="100%" stop-color="#1C7EFF"/>
     </linearGradient>
   </defs>
-  <!-- Dark rounded background -->
   <rect width="32" height="32" rx="7" fill="#060E1B"/>
-  <!-- Circular arc: lower-right → counterclockwise → upper-right (≈294° arc) -->
-  <path d="M 25.2 22 A 11 11 0 1 0 25.2 10"
-        fill="none" stroke="url(#eg)" stroke-width="3.2" stroke-linecap="round"/>
-  <!-- Horizontal crossbar through centre -->
-  <line x1="5" y1="16" x2="27" y2="16"
-        stroke="url(#eg)" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- Shift 1.5px right to visually centre the open-right "e" shape -->
+  <g transform="translate(1.5, 0)">
+    <path d="M 23.7 21 A 10 10 0 1 0 23.7 11"
+          fill="none" stroke="url(#eg)" stroke-width="3.8" stroke-linecap="round"/>
+    <line x1="6" y1="16" x2="25.5" y2="16"
+          stroke="url(#eg)" stroke-width="3.8" stroke-linecap="round"/>
+  </g>
 </svg>
