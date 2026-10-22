@@ -424,6 +424,29 @@
     .reveal-d3 { transition-delay: .36s; }
 
 
+    /* ── TESTIMONIAL ──────────────────────────────────────── */
+    .cs-quote { background: var(--bg-lt); padding: 7rem 2rem; }
+    .cs-quote-in { max-width: 920px; margin: 0 auto; }
+    .cs-quote-body {
+      position: relative; margin-top: 2rem;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.3; letter-spacing: -.01em;
+      color: var(--dark);
+    }
+    .cs-quote-body::before {
+      content: "\201C"; position: absolute; left: -.6em; top: -.15em;
+      font-size: 3em; line-height: 1; color: var(--primary); opacity: .25;
+      display: none;
+    }
+    @media (min-width: 1100px) { .cs-quote-body::before { display: block; } }
+    .cs-quote-body p { position: relative; }
+    .cs-quote-by { display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; }
+    .cs-quote-by img {
+      width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: center 20%;
+      box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(13,110,253,.25), 0 10px 28px rgba(13,110,253,.18);
+    }
+    .cs-quote-name { font-size: 1rem; font-weight: 700; color: var(--dark); }
+    .cs-quote-role { font-size: .85rem; color: var(--dk-m); margin-top: .15rem; }
     /* ── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 960px) {
       .cs-stats { grid-template-columns: repeat(2,1fr); }
@@ -814,13 +837,33 @@
   </div>
 </section>
 
+<!-- ── TESTIMONIAL ────────────────────────────────────────── -->
+<section class="cs-quote">
+  <figure class="cs-quote-in reveal">
+    <p class="eyebrow eyebrow--dk">
+      <span class="eyebrow-bar"></span>
+      <span class="eyebrow-tag">[05]</span>
+      In their words
+    </p>
+    <blockquote class="cs-quote-body">
+      <p>EtherGTM handled our email outreach setup end to end, from configuring the email infrastructure and authentication to setting up prospecting and personalized outreach workflows. Their structured approach and use of tools like Apollo, Instantly, and Claude helped simplify the process and establish a solid foundation for our outbound efforts. We appreciated having one team manage the entire setup.</p>
+    </blockquote>
+    <figcaption class="cs-quote-by">
+      <img src="/case-studies/images/dharmik-pavasiya.jpg" alt="Dharmik Pavasiya" width="64" height="64" loading="lazy" />
+      <div>
+        <div class="cs-quote-name">Dharmik Pavasiya</div>
+        <div class="cs-quote-role">CEO, Ashtakona</div>
+      </div>
+    </figcaption>
+  </figure>
+</section>
 <!-- ── CTA ────────────────────────────────────────────────── -->
 <section class="cta">
   <div class="cta-in">
     <div>
       <p class="cta-eyebrow">
         <span class="eyebrow-bar" style="display:inline-block;vertical-align:middle;margin-right:10px;"></span>
-        <span class="eyebrow-tag">[05]</span> Get started
+        <span class="eyebrow-tag">[06]</span> Get started
       </p>
       <h2 class="t-xl cta-title">Want results<br>like this?</h2>
       <p class="cta-body">Book a 30-minute strategy call. We'll map your ICP, show you what a 90-day dual-channel program looks like for your business, and tell you exactly what to expect.</p>
